@@ -70,7 +70,7 @@ export default function ProductChart({ data, flowFilter, total, digitLevel = 2, 
                 <div
                   className="product-bar"
                   style={{
-                    width: `${maxVal > 0 ? (r.value / maxVal) * 100 : 0}%`,
+                    width: `${totalVal > 0 ? (r.value / totalVal) * 100 : 0}%`,
                     backgroundColor: RUBRO_COLORS[r.code],
                     opacity: 0.8,
                   }}
@@ -117,7 +117,7 @@ export default function ProductChart({ data, flowFilter, total, digitLevel = 2, 
                   <div
                     className="product-bar"
                     style={{
-                      width: `${(p.value / maxVal) * 100}%`,
+                      width: `${totalVal > 0 ? (p.value / totalVal) * 100 : 0}%`,
                       backgroundColor: color,
                       opacity: 0.7,
                     }}
