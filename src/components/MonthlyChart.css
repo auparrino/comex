@@ -1,0 +1,21 @@
+.monthly-chart {
+  margin-top: 4px;
+}
+
+.monthly-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.monthly-svg-container {
+  width: 100%;
+}
+
+.monthly-svg {
+  width: 100%;
+  display: block;
+}

@@ -1,0 +1,218 @@
+.global-overview {
+  padding: 0;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 16px;
+}
+
+.overview-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.overview-card.wide {
+  grid-column: 1 / -1;
+}
+
+.chart-container {
+  width: 100%;
+}
+
+.chart-container svg {
+  width: 100%;
+  display: block;
+}
+
+.legend-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.legend-item .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Section title row with toggle */
+.section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.section-title-row .section-title {
+  margin-bottom: 0;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.view-toggle button {
+  padding: 3px 10px;
+  font-size: 0.68rem;
+  font-family: inherit;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.view-toggle button.active {
+  background: var(--dark-blue);
+  color: var(--cream);
+}
+
+.view-toggle button:not(.active):hover {
+  background: var(--bg-card-hover);
+}
+
+/* Rubros chart */
+.rubros-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rubros-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rubros-flow-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.rubros-flow-title.exp-title { color: var(--blue); }
+.rubros-flow-title.imp-title { color: var(--red); }
+
+.rubro-row {
+  padding: 4px 0;
+}
+
+.rubro-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.rubro-code {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 1px 5px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.rubro-name {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rubro-bar-container {
+  height: 16px;
+  background: rgba(0, 48, 73, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 2px 0;
+}
+
+.rubro-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+  min-width: 3px;
+  opacity: 0.8;
+}
+
+.rubro-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+}
+
+.rubro-amount {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.rubro-pct {
+  color: var(--text-dim);
+}
+
+/* Analysis card */
+.analysis-card {
+  background: linear-gradient(135deg, var(--bg-card), rgba(0, 48, 73, 0.15));
+}
+
+.analysis-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.insight {
+  padding: 12px;
+  background: rgba(0, 48, 73, 0.05);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.insight h4 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 6px;
+}
+
+.insight p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-content {
+    grid-template-columns: 1fr;
+  }
+}

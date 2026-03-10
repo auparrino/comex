@@ -1,0 +1,45 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Comtrade raw data & cache (too large for git)
+scripts/comtrade_raw/
+scripts/comtrade_cache/
+
+# Original INDEC raw data (pre-conversion)
+public/data/details/
+public/data/summary.json
+public/data/products.json
+public/data/globals.json
+public/data/country_slugs.json
+public/data/ncm_descriptions.json
+public/data/monthly.json
+public/data/bilateral_index.json
+
+# Screenshots and PDFs
+*.png
+*.pdf
+
+# Claude config
+.claude/

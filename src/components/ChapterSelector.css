@@ -1,0 +1,21 @@
+.chapter-selector select {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.78rem;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  max-width: 220px;
+}
+
+.chapter-selector select:focus {
+  border-color: var(--blue);
+}
+
+.chapter-selector select option {
+  background: var(--bg-card);
+  color: var(--text);
+}

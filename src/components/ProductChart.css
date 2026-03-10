@@ -1,0 +1,131 @@
+.product-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product-section-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.exp-title { color: var(--blue); }
+.imp-title { color: var(--red); }
+
+.product-row {
+  margin: 4px 0;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.chapter-code {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  background: var(--bg);
+  padding: 1px 4px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.chapter-name {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+.product-bar-container {
+  height: 14px;
+  background: rgba(0, 48, 73, 0.06);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 2px 0;
+}
+
+.product-bar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+  min-width: 2px;
+}
+
+.product-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+}
+
+.product-amount {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.product-pct {
+  color: var(--text-dim);
+}
+
+.no-data {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-style: italic;
+  padding: 12px 0;
+}
+
+.product-count {
+  font-weight: 400;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin-left: 6px;
+  text-transform: none;
+}
+
+.load-more-btn {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  background: var(--bg);
+  border: 1px dashed var(--border);
+  color: var(--blue);
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+
+.load-more-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--blue);
+}
+
+/* Rubro mode */
+.rubro-code-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.rubro-bar-tall {
+  height: 18px;
+}
+
+.rubro-product-row {
+  margin: 6px 0;
+}

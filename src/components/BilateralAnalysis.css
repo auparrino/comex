@@ -1,0 +1,227 @@
+.bilateral-analysis {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bilateral-loading,
+.bilateral-empty {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+}
+
+/* Sub-tabs */
+.bilateral-section-tabs {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 12px;
+}
+
+.bilateral-section-tabs button {
+  flex: 1;
+  padding: 6px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+
+.bilateral-section-tabs button.active {
+  background: var(--dark-blue);
+  color: #FDF0D5;
+  border-color: var(--blue);
+}
+
+.bilateral-section-tabs button:hover:not(.active) {
+  color: var(--text);
+  border-color: var(--text-dim);
+}
+
+/* Sections */
+.bilateral-section {
+  margin-bottom: 16px;
+}
+
+.bilateral-section-title {
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.bilateral-section-title.exp-title { color: var(--blue); }
+.bilateral-section-title.imp-title { color: var(--red); }
+.bilateral-section-title.opp-title { color: #2a9d8f; }
+.bilateral-section-title.dep-title { color: #e76f51; }
+
+.bilateral-count {
+  font-weight: 400;
+  font-size: 0.66rem;
+  color: var(--text-dim);
+  margin-left: 6px;
+  text-transform: none;
+}
+
+.bilateral-section-desc {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* Rows */
+.bilateral-row {
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(0, 48, 73, 0.06);
+}
+
+.bilateral-row:last-child {
+  border-bottom: none;
+}
+
+.bilateral-row-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.bilateral-code {
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  background: var(--bg);
+  padding: 1px 4px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.bilateral-desc {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  text-transform: capitalize;
+}
+
+.bilateral-row-bottom {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bilateral-value {
+  font-size: 0.76rem;
+  font-weight: 700;
+  min-width: 50px;
+}
+
+.bilateral-share {
+  font-size: 0.64rem;
+  color: var(--text-dim);
+  min-width: 28px;
+}
+
+/* Trend badges */
+.trend-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0px 4px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.trend-up { color: #2a9d8f; background: rgba(42, 157, 143, 0.12); }
+.trend-down { color: var(--red); background: rgba(193, 18, 31, 0.1); }
+.trend-stable { color: var(--text-dim); background: rgba(0, 48, 73, 0.06); }
+.trend-new { color: var(--blue); background: rgba(102, 155, 188, 0.15); }
+.trend-lost { color: var(--text-dim); background: rgba(0, 48, 73, 0.06); }
+
+.mini-sparkline {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* Opportunity rows */
+.opp-bar-row,
+.dep-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 3px 0;
+}
+
+.opp-bar-track,
+.dep-bar-track {
+  flex: 1;
+  height: 10px;
+  background: rgba(0, 48, 73, 0.06);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.opp-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2a9d8f, rgba(42, 157, 143, 0.4));
+  border-radius: 5px;
+}
+
+.dep-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #e76f51, rgba(231, 111, 81, 0.4));
+  border-radius: 5px;
+}
+
+.opp-bar-pct {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #2a9d8f;
+  min-width: 32px;
+  text-align: right;
+}
+
+.dep-bar-pct {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #e76f51;
+  min-width: 32px;
+  text-align: right;
+}
+
+.opp-stats-row,
+.dep-stats-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1px;
+}
+
+.opp-stat-item {
+  font-size: 0.64rem;
+  color: var(--text-dim);
+}
+
+.opp-stat-item strong {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.no-data {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  font-style: italic;
+  padding: 8px 0;
+}

@@ -1,0 +1,8 @@
+.trade-timeline {
+  width: 100%;
+}
+
+.trade-timeline svg {
+  width: 100%;
+  display: block;
+}
