@@ -1,0 +1,32 @@
+[
+  {
+    "key": "arg",
+    "name": "Argentina",
+    "code": 32,
+    "iso2": "AR",
+    "coords": [
+      -34.6,
+      -58.4
+    ]
+  },
+  {
+    "key": "ury",
+    "name": "Uruguay",
+    "code": 858,
+    "iso2": "UY",
+    "coords": [
+      -34.9,
+      -56.2
+    ]
+  },
+  {
+    "key": "pry",
+    "name": "Paraguay",
+    "code": 600,
+    "iso2": "PY",
+    "coords": [
+      -25.3,
+      -57.6
+    ]
+  }
+]
