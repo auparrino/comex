@@ -27,9 +27,21 @@
 .ps-selected {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   width: 100%;
   font-size: 13px;
+}
+
+.ps-badge {
+  background: #5b7ea1;
+  color: white;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  letter-spacing: 0.3px;
 }
 
 .ps-selected .ps-code {
@@ -89,21 +101,67 @@
   box-sizing: border-box;
 }
 
-.ps-back {
-  display: block;
-  width: 100%;
+/* Tabs */
+.ps-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 48, 73, 0.1);
+}
+
+.ps-tab {
+  flex: 1;
   padding: 6px 12px;
   border: none;
-  background: rgba(0, 48, 73, 0.04);
+  background: transparent;
+  color: #888;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  border-bottom: 2px solid transparent;
+}
+
+.ps-tab:hover {
+  color: #003049;
+  background: rgba(0, 48, 73, 0.03);
+}
+
+.ps-tab.active {
+  color: #003049;
+  border-bottom-color: #003049;
+  font-weight: 600;
+}
+
+/* Navigation bar */
+.ps-nav-bar {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 48, 73, 0.1);
+  background: rgba(0, 48, 73, 0.03);
+}
+
+.ps-back {
+  padding: 6px 12px;
+  border: none;
+  background: transparent;
   color: #003049;
   font-size: 12px;
   text-align: left;
   cursor: pointer;
-  border-bottom: 1px solid rgba(0, 48, 73, 0.1);
+  flex-shrink: 0;
+  font-weight: 500;
 }
 
 .ps-back:hover {
   background: rgba(0, 48, 73, 0.08);
+}
+
+.ps-breadcrumb {
+  font-size: 11px;
+  color: #888;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 12px;
 }
 
 .ps-list {
@@ -111,6 +169,38 @@
   overflow-y: auto;
 }
 
+/* Row container: item + optional drill button */
+.ps-row {
+  display: flex;
+  align-items: stretch;
+}
+
+.ps-row .ps-item {
+  flex: 1;
+  min-width: 0;
+}
+
+.ps-drill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  border: none;
+  background: transparent;
+  color: #aaa;
+  font-size: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.15s;
+  border-left: 1px solid rgba(0, 48, 73, 0.06);
+}
+
+.ps-drill:hover {
+  background: rgba(0, 48, 73, 0.1);
+  color: #003049;
+}
+
+/* Item base */
 .ps-item {
   display: flex;
   align-items: center;
@@ -134,7 +224,7 @@
   font-weight: 600;
   font-family: monospace;
   flex-shrink: 0;
-  min-width: 50px;
+  min-width: 42px;
 }
 
 .ps-item-desc {
@@ -150,10 +240,32 @@
   font-weight: 500;
 }
 
-.ps-arrow {
-  color: #999;
-  font-size: 16px;
+.ps-heading .ps-item-desc {
+  color: #2a5070;
+  font-weight: 500;
+}
+
+/* Rubro styles */
+.ps-rubro .ps-item-code {
+  background: #5b7ea1;
+  color: white;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-family: inherit;
+  min-width: auto;
+}
+
+.ps-rubro .ps-item-desc {
+  color: #003049;
+  font-weight: 500;
+}
+
+.ps-rubro-count {
+  color: #aaa;
+  font-size: 10px;
   flex-shrink: 0;
+  margin-left: 4px;
 }
 
 .ps-empty {

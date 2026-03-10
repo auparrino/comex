@@ -34,21 +34,75 @@ export default function App() {
     setYearTo(null);
   }, [data.activeReporter]);
 
-  // Load product map when product selected
+  // Load product map when product selected (supports 2/4/6-digit and rubros)
   useEffect(() => {
     if (!selectedProduct) {
       setProductMapData(null);
       return;
     }
-    const chapter = selectedProduct.slice(0, 2);
-    data.loadProductMap(chapter).then(chapterData => {
-      if (chapterData && chapterData[selectedProduct]) {
-        setProductMapData(chapterData[selectedProduct]);
-      } else {
-        setProductMapData(null);
+
+    // Helper: aggregate multiple hs6 entries into {partner: {exp, imp}}
+    const aggregate = (chapterData, filterFn) => {
+      const result = {};
+      for (const [hs6, partners] of Object.entries(chapterData)) {
+        if (filterFn && !filterFn(hs6)) continue;
+        for (const [partner, vals] of Object.entries(partners)) {
+          if (!result[partner]) result[partner] = { exp: 0, imp: 0 };
+          result[partner].exp += vals.exp || 0;
+          result[partner].imp += vals.imp || 0;
+        }
       }
-    });
-  }, [selectedProduct, data.loadProductMap]);
+      return Object.keys(result).length > 0 ? result : null;
+    };
+
+    if (selectedProduct.startsWith('rubro:')) {
+      // Rubro: load multiple chapters and aggregate
+      const rubroCode = selectedProduct.slice(6);
+      const allRubros = [...(data.rubros?.exp || []), ...(data.rubros?.imp || [])];
+      const rubro = allRubros.find(r => r.code === rubroCode);
+      if (!rubro) { setProductMapData(null); return; }
+
+      Promise.all(rubro.chapters.map(ch => data.loadProductMap(ch)))
+        .then(results => {
+          const merged = {};
+          for (const chData of results) {
+            if (!chData) continue;
+            const agg = aggregate(chData, null);
+            if (agg) {
+              for (const [partner, vals] of Object.entries(agg)) {
+                if (!merged[partner]) merged[partner] = { exp: 0, imp: 0 };
+                merged[partner].exp += vals.exp;
+                merged[partner].imp += vals.imp;
+              }
+            }
+          }
+          setProductMapData(Object.keys(merged).length > 0 ? merged : null);
+        });
+    } else if (selectedProduct.length === 2) {
+      // Chapter (2-digit): load single chapter, aggregate all HS6
+      data.loadProductMap(selectedProduct).then(chapterData => {
+        if (!chapterData) { setProductMapData(null); return; }
+        setProductMapData(aggregate(chapterData, null));
+      });
+    } else if (selectedProduct.length === 4) {
+      // Heading (4-digit): load chapter, aggregate HS6 starting with this heading
+      const chapter = selectedProduct.slice(0, 2);
+      data.loadProductMap(chapter).then(chapterData => {
+        if (!chapterData) { setProductMapData(null); return; }
+        setProductMapData(aggregate(chapterData, hs6 => hs6.startsWith(selectedProduct)));
+      });
+    } else {
+      // HS6 (6-digit): load chapter, get specific code
+      const chapter = selectedProduct.slice(0, 2);
+      data.loadProductMap(chapter).then(chapterData => {
+        if (chapterData && chapterData[selectedProduct]) {
+          setProductMapData(chapterData[selectedProduct]);
+        } else {
+          setProductMapData(null);
+        }
+      });
+    }
+  }, [selectedProduct, data.loadProductMap, data.rubros]);
 
   // Initialize year range once data loads
   const from = yearFrom || data.years[0];
@@ -133,6 +187,7 @@ export default function App() {
             <ProductSelector
               chapters={data.chapters}
               hsDescriptions={data.ncmDescriptions}
+              rubros={data.rubros}
               selected={selectedProduct}
               onSelect={setSelectedProduct}
             />

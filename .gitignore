@@ -29,6 +29,7 @@ scripts/comtrade_cache/
 
 # Original INDEC raw data (pre-conversion)
 public/data/details/
+public/data/bilateral/
 public/data/summary.json
 public/data/products.json
 public/data/globals.json
