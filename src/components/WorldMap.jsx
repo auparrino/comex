@@ -146,15 +146,19 @@ export default function WorldMap({
             return d3.interpolate('#e8dcc0', COLORS.imports)(intensity);
           }
         }
-        return '#e8dcc0';
+        return '#ddd8d0';
       })
       .attr('stroke', d => {
-        let name = findCountryName(d.id, isoToName);
-        return name === selectedCountry ? COLORS.highlight : '#d4c4a0';
+        const name = findCountryName(d.id, isoToName);
+        if (name === selectedCountry) return COLORS.highlight;
+        if (name && totals[name]) return '#d4c4a0';
+        return '#ccc8c0';
       })
       .attr('stroke-width', d => {
-        let name = findCountryName(d.id, isoToName);
-        return name === selectedCountry ? 2 : 0.5;
+        const name = findCountryName(d.id, isoToName);
+        if (name === selectedCountry) return 2;
+        if (name && totals[name]) return 0.5;
+        return 0.2;
       })
       .style('cursor', 'pointer')
       .on('click', (event, d) => {
