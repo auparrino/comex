@@ -151,22 +151,12 @@ export default function WorldMap({
       .attr('stroke', d => {
         const name = findCountryName(d.id, isoToName);
         if (name === selectedCountry) return COLORS.highlight;
-        if (name && totals[name]) {
-          const t = totals[name];
-          const intensity = colorScale(t.total);
-          return intensity > 0.3 ? '#c8b890' : '#e0d8c4';
-        }
-        return '#ede4d0';
+        return 'none';
       })
       .attr('stroke-width', d => {
         const name = findCountryName(d.id, isoToName);
         if (name === selectedCountry) return 2;
-        if (name && totals[name]) {
-          const t = totals[name];
-          const intensity = colorScale(t.total);
-          return intensity > 0.3 ? 0.4 : 0.15;
-        }
-        return 0.1;
+        return 0;
       })
       .style('cursor', 'pointer')
       .on('click', (event, d) => {
