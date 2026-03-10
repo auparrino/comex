@@ -15,6 +15,7 @@ export function useTradeData() {
   const [globals, setGlobals] = useState(null);
   const [ncmDescriptions, setNcmDescriptions] = useState(null);
   const [countrySlugs, setCountrySlugs] = useState(null);
+  const [monthly, setMonthly] = useState(null);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -55,13 +56,15 @@ export function useTradeData() {
       fetch(`${base}/globals.json`).then(r => r.json()),
       fetch(`${base}/hs_descriptions.json`).then(r => r.json()),
       fetch(`${base}/country_slugs.json`).then(r => r.json()),
+      fetch(`${base}/monthly.json`).then(r => r.ok ? r.json() : null).catch(() => null),
     ])
-      .then(([s, p, g, desc, slugs]) => {
+      .then(([s, p, g, desc, slugs, m]) => {
         setSummary(s);
         setProducts(p);
         setGlobals(g);
         setNcmDescriptions(desc);
         setCountrySlugs(slugs);
+        setMonthly(m);
         setLoading(false);
       })
       .catch(err => {
@@ -132,7 +135,7 @@ export function useTradeData() {
   }, [summary]);
 
   return {
-    summary, products, chapters, globals,
+    summary, products, chapters, globals, monthly,
     ncmDescriptions, countrySlugs, rubros,
     years, countries, loading, error,
     loadCountryDetail, detailCache,

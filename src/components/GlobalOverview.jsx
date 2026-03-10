@@ -7,7 +7,6 @@ import './GlobalOverview.css';
 
 export default function GlobalOverview({ data, selectedYear, selectedYears }) {
   const timelineRef = useRef();
-  const productRef = useRef();
   const monthlyRef = useRef();
   const [productView, setProductView] = useState('chapters');
 
@@ -181,24 +180,10 @@ export default function GlobalOverview({ data, selectedYear, selectedYears }) {
 
   }, [data.globals, selectedYears, hasMonthlyData]);
 
-  // Top products chart
-  useEffect(() => {
-    if (!productRef.current || !data.globals) return;
-
-    const container = productRef.current.parentElement;
-    const width = container.clientWidth;
-    const height = 320;
-    const margin = { top: 10, right: 80, bottom: 5, left: 10 };
-    const innerW = width - margin.left - margin.right;
-    const innerH = height - margin.top - margin.bottom;
-
-    const svg = d3.select(productRef.current).attr('viewBox', `0 0 ${width} ${height}`);
-    svg.selectAll('*').remove();
-    const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
-
-    // Aggregate products
+  // Top 10 chapters data (HTML-based, not D3)
+  const top10Chapters = useMemo(() => {
+    if (!data.globals) return [];
     const productTotals = {};
-
     selectedYears.forEach(yr => {
       const p = data.globals.products[yr];
       if (!p) return;
@@ -211,47 +196,10 @@ export default function GlobalOverview({ data, selectedYear, selectedYears }) {
         productTotals[ch].imp += val;
       }
     });
-
-    const top10 = Object.values(productTotals)
+    return Object.values(productTotals)
       .map(p => ({ ...p, total: p.exp + p.imp, name: data.chapters[p.chapter] || `Cap ${p.chapter}` }))
       .sort((a, b) => b.total - a.total)
       .slice(0, 10);
-
-    const y = d3.scaleBand().domain(top10.map(d => d.chapter)).range([0, innerH]).padding(0.2);
-    const maxTotal = d3.max(top10, d => d.total);
-    const x = d3.scaleLinear().domain([0, maxTotal]).range([0, innerW]);
-
-    top10.forEach((d, i) => {
-      const yPos = y(d.chapter);
-      const barH = y.bandwidth();
-
-      // Stacked bar: exports then imports
-      g.append('rect')
-        .attr('x', 0).attr('y', yPos)
-        .attr('width', x(d.exp)).attr('height', barH)
-        .attr('fill', COLORS.exports).attr('opacity', 0.8).attr('rx', 3);
-
-      g.append('rect')
-        .attr('x', x(d.exp)).attr('y', yPos)
-        .attr('width', x(d.imp)).attr('height', barH)
-        .attr('fill', COLORS.imports).attr('opacity', 0.8).attr('rx', 3);
-
-      // Chapter label
-      const shortName = d.name.length > 35 ? d.name.slice(0, 32) + '...' : d.name;
-      g.append('text')
-        .attr('x', 4).attr('y', yPos + barH / 2)
-        .attr('dy', '0.35em')
-        .text(`${d.chapter} · ${shortName}`)
-        .attr('fill', '#FDF0D5').attr('font-size', '10px').attr('font-weight', '500');
-
-      // Value label
-      g.append('text')
-        .attr('x', x(d.total) + 4).attr('y', yPos + barH / 2)
-        .attr('dy', '0.35em')
-        .text(fmt(d.total))
-        .attr('fill', '#003049').attr('font-size', '10px');
-    });
-
   }, [data.globals, data.chapters, selectedYears]);
 
   // Global monthly seasonality
@@ -372,7 +320,7 @@ export default function GlobalOverview({ data, selectedYear, selectedYears }) {
         </div>
 
         {/* Products */}
-        <div className="overview-card">
+        <div className="overview-card wide">
           <div className="section-title-row">
             <h3 className="section-title">
               {productView === 'chapters' ? 'Top 10 capitulos del SA' : 'Grandes Rubros'}
@@ -393,8 +341,23 @@ export default function GlobalOverview({ data, selectedYear, selectedYears }) {
             </div>
           </div>
           {productView === 'chapters' ? (
-            <div className="chart-container">
-              <svg ref={productRef} />
+            <div className="chapters-chart">
+              {top10Chapters.map(d => {
+                const maxTotal = top10Chapters[0]?.total || 1;
+                return (
+                  <div key={d.chapter} className="chapter-row">
+                    <div className="chapter-header">
+                      <span className="chapter-code">{d.chapter}</span>
+                      <span className="chapter-name">{d.name}</span>
+                      <span className="chapter-total">{fmt(d.total)}</span>
+                    </div>
+                    <div className="chapter-bar-container">
+                      <div className="chapter-bar exp" style={{ width: `${(d.exp / maxTotal) * 100}%` }} />
+                      <div className="chapter-bar imp" style={{ width: `${(d.imp / maxTotal) * 100}%` }} />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           ) : rubrosData ? (
             <div className="rubros-chart">
@@ -458,7 +421,7 @@ export default function GlobalOverview({ data, selectedYear, selectedYears }) {
 
         {/* Monthly (only if data available) */}
         {hasMonthlyData && (
-          <div className="overview-card">
+          <div className="overview-card wide">
             <h3 className="section-title">
               Estacionalidad {selectedYears.length > 1 ? '(promedio)' : selectedYears[0]}
             </h3>

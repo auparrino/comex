@@ -6,6 +6,8 @@ import { COLORS } from '../utils/colors';
 import { fmt } from '../utils/format';
 import './WorldMap.css';
 
+const EMPTY_SET = new Set();
+
 function getCountryTotals(summary, selectedYears) {
   const result = {};
   for (const [name, data] of Object.entries(summary)) {
@@ -31,7 +33,9 @@ export default function WorldMap({
   reporterCoords,
   selectedProduct,
   productMapData,
+  blocHighlight,
 }) {
+  blocHighlight = blocHighlight || EMPTY_SET;
   const svgRef = useRef();
   const tooltipRef = useRef();
   const [worldData, setWorldData] = useState(null);
@@ -146,17 +150,22 @@ export default function WorldMap({
             return d3.interpolate('#e8dcc0', COLORS.imports)(intensity);
           }
         }
-        return '#efe4cc';
+        return '#FDF0D5';
       })
-      .attr('stroke', d => {
+      .attr('stroke', function(d) {
         const name = findCountryName(d.id, isoToName);
         if (name === selectedCountry) return COLORS.highlight;
-        return 'none';
+        if (blocHighlight && blocHighlight.size > 0 && name && blocHighlight.has(name))
+          return COLORS.highlight;
+        // Use same color as fill to eliminate anti-aliasing gaps
+        return d3.select(this).attr('fill');
       })
-      .attr('stroke-width', d => {
+      .attr('stroke-width', function(d) {
         const name = findCountryName(d.id, isoToName);
         if (name === selectedCountry) return 2;
-        return 0;
+        if (blocHighlight && blocHighlight.size > 0 && name && blocHighlight.has(name))
+          return 1.5;
+        return 0.5;
       })
       .style('cursor', 'pointer')
       .on('click', (event, d) => {
@@ -282,7 +291,7 @@ export default function WorldMap({
     legend.append('rect').attr('x', 0).attr('y', 18).attr('width', 12).attr('height', 12).attr('fill', COLORS.imports).attr('rx', 2);
     legend.append('text').attr('x', 18).attr('y', 28).text('Importaciones CIF').attr('fill', COLORS.text).attr('font-size', '11px');
 
-  }, [worldData, effectiveTotals, selectedCountry, isoToName, onSelectCountry, hubCoords, selectedProduct]);
+  }, [worldData, effectiveTotals, selectedCountry, isoToName, onSelectCountry, hubCoords, selectedProduct, blocHighlight]);
 
   return (
     <div className="world-map-container">

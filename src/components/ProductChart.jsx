@@ -3,7 +3,7 @@ import { fmt, fmtPct } from '../utils/format';
 import { COLORS, RUBRO_COLORS } from '../utils/colors';
 import './ProductChart.css';
 
-const ITEMS_PER_PAGE = 20;
+const ITEMS_PER_PAGE = 7;
 
 export default function ProductChart({ data, flowFilter, total, digitLevel = 2, viewMode = 'chapters' }) {
   const showExp = flowFilter === 'both' || flowFilter === 'exp';

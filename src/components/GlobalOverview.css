@@ -92,6 +92,75 @@
   background: var(--bg-card-hover);
 }
 
+/* Chapters chart (HTML) */
+.chapters-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chapter-row {
+  padding: 2px 0;
+}
+
+.chapter-header {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.chapter-code {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--dark-blue);
+  background: rgba(0, 48, 73, 0.08);
+  padding: 1px 5px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.chapter-name {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+
+.chapter-total {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.chapter-bar-container {
+  height: 10px;
+  background: rgba(0, 48, 73, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+}
+
+.chapter-bar {
+  height: 100%;
+  min-width: 0;
+  transition: width 0.3s;
+}
+
+.chapter-bar.exp {
+  background: var(--blue);
+  opacity: 0.8;
+}
+
+.chapter-bar.imp {
+  background: var(--red);
+  opacity: 0.8;
+}
+
 /* Rubros chart */
 .rubros-chart {
   display: flex;

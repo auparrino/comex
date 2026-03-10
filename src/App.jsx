@@ -7,6 +7,7 @@ import YearRangeSelector from './components/YearRangeSelector';
 import TopPartners from './components/TopPartners';
 import ReporterSelector from './components/ReporterSelector';
 import ProductSelector from './components/ProductSelector';
+import BlocPanel from './components/BlocPanel';
 import './App.css';
 
 export default function App() {
@@ -17,6 +18,8 @@ export default function App() {
   const [yearTo, setYearTo] = useState(null);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [productMapData, setProductMapData] = useState(null);
+  const [blocHighlight, setBlocHighlight] = useState(new Set());
+  const [selectedBloc, setSelectedBloc] = useState(null);
 
   // Get active reporter config
   const activeReporterConfig = useMemo(() => {
@@ -126,6 +129,13 @@ export default function App() {
 
   const handleSelectCountry = useCallback((name) => {
     setSelectedCountry(prev => prev === name ? null : name);
+    setSelectedBloc(null);
+    setShowAnalysis(false);
+  }, []);
+
+  const handleSelectBloc = useCallback((key) => {
+    setSelectedBloc(prev => prev === key ? null : key);
+    setSelectedCountry(null);
     setShowAnalysis(false);
   }, []);
 
@@ -147,7 +157,7 @@ export default function App() {
     return <div className="error-screen">Error: {data.error}</div>;
   }
 
-  const hasPanel = selectedCountry || showAnalysis;
+  const hasPanel = selectedCountry || selectedBloc || showAnalysis;
   const reporterName = activeReporterConfig?.name || 'Argentina';
   const yearRange = data.years.length
     ? `${data.years[0]}-${data.years[data.years.length - 1]}`
@@ -200,14 +210,19 @@ export default function App() {
               reporterCoords={activeReporterConfig?.coords || [-34.6, -58.4]}
               selectedProduct={selectedProduct}
               productMapData={productMapData}
+              blocHighlight={blocHighlight}
             />
             <TopPartners
               countries={data.countries}
               summary={data.summary}
-              selectedYear={selectedYear}
               selectedYears={selectedYears}
               selectedCountry={selectedCountry}
               onSelect={handleSelectCountry}
+              selectedProduct={selectedProduct}
+              productMapData={productMapData}
+              onBlocHighlight={setBlocHighlight}
+              onSelectBloc={handleSelectBloc}
+              selectedBloc={selectedBloc}
             />
           </div>
           {selectedCountry && (
@@ -219,7 +234,16 @@ export default function App() {
               onClose={() => setSelectedCountry(null)}
             />
           )}
-          {showAnalysis && !selectedCountry && (
+          {selectedBloc && !selectedCountry && (
+            <BlocPanel
+              blocKey={selectedBloc}
+              data={data}
+              selectedYears={selectedYears}
+              onClose={() => setSelectedBloc(null)}
+              onSelectCountry={handleSelectCountry}
+            />
+          )}
+          {showAnalysis && !selectedCountry && !selectedBloc && (
             <div className="analysis-panel">
               <div className="panel-header">
                 <h2>Resumen Global - {reporterName}</h2>

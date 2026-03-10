@@ -159,14 +159,6 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
         >
           Productos
         </button>
-        {hasMonthlyData && (
-          <button
-            className={activeTab === 'monthly' ? 'active' : ''}
-            onClick={() => setActiveTab('monthly')}
-          >
-            Estacionalidad
-          </button>
-        )}
         {data.loadBilateralData && (
           <button
             className={activeTab === 'bilateral' ? 'active' : ''}
@@ -177,8 +169,8 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
         )}
       </div>
 
-      {/* Flow filter + digit selector (not shown on bilateral tab) */}
-      {activeTab !== 'bilateral' && (
+      {/* Flow filter + digit selector (only on products tab) */}
+      {activeTab === 'products' && (
         <div className="panel-controls">
           <div className="flow-filter">
             <button
@@ -240,49 +232,31 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
             years={data.years}
             selectedYears={selectedYears}
           />
-        ) : activeTab === 'products' ? (
-          detailLoading ? (
-            <div className="loading-detail">Cargando detalle...</div>
-          ) : (
-            <ProductChart
-              data={productView === 'rubros' ? rubrosData : productData}
-              flowFilter={flowFilter}
-              total={{ exp: totalExp, imp: totalImp }}
-              digitLevel={digitLevel}
-              viewMode={productView}
-            />
-          )
         ) : (
-          <div>
-            <MonthlyChart
-              data={monthlyData}
-              flowFilter={flowFilter}
-            />
-            <div className="concentration-info">
-              <h4>Índice de concentración mensual</h4>
-              <p className="concentration-desc">
-                Mide si el comercio está distribuido uniformemente en el año o concentrado en pocos meses.
-              </p>
-              <div className="concentration-row">
-                <span className="label exports">Exp. FOB CV:</span>
-                <span className="value">{(expConcentration.cv * 100).toFixed(0)}%</span>
-                <span className="interpretation">
-                  {expConcentration.cv < 0.15 ? 'Muy uniforme' :
-                   expConcentration.cv < 0.3 ? 'Moderadamente uniforme' :
-                   expConcentration.cv < 0.5 ? 'Algo concentrado' : 'Muy concentrado'}
-                </span>
+          <>
+            {detailLoading ? (
+              <div className="loading-detail">Cargando detalle...</div>
+            ) : (
+              <ProductChart
+                data={productView === 'rubros' ? rubrosData : productData}
+                flowFilter={flowFilter}
+                total={{ exp: totalExp, imp: totalImp }}
+                digitLevel={digitLevel}
+                viewMode={productView}
+              />
+            )}
+            {hasMonthlyData && (
+              <div className="panel-seasonality">
+                <h4 className="seasonality-title">
+                  Estacionalidad {selectedYears.length > 1 ? '(promedio)' : selectedYears[0]}
+                </h4>
+                <MonthlyChart
+                  data={monthlyData}
+                  flowFilter={flowFilter}
+                />
               </div>
-              <div className="concentration-row">
-                <span className="label imports">Imp. CIF CV:</span>
-                <span className="value">{(impConcentration.cv * 100).toFixed(0)}%</span>
-                <span className="interpretation">
-                  {impConcentration.cv < 0.15 ? 'Muy uniforme' :
-                   impConcentration.cv < 0.3 ? 'Moderadamente uniforme' :
-                   impConcentration.cv < 0.5 ? 'Algo concentrado' : 'Muy concentrado'}
-                </span>
-              </div>
-            </div>
-          </div>
+            )}
+          </>
         )}
       </div>
     </div>
