@@ -12,7 +12,7 @@ import os
 from pathlib import Path
 
 API_BASE = "https://comtradeapi.un.org/data/v1/get/C/A/HS"
-API_KEY = "fa2e2d70eb734fb49c236360f54503ee"
+API_KEY = os.environ.get("COMTRADE_API_KEY", "")
 
 REPORTERS = {
     "ury": 858,
