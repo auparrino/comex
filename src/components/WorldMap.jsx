@@ -146,7 +146,7 @@ export default function WorldMap({
             return d3.interpolate('#e8dcc0', COLORS.imports)(intensity);
           }
         }
-        return '#f5ead2';
+        return '#efe4cc';
       })
       .attr('stroke', d => {
         const name = findCountryName(d.id, isoToName);
