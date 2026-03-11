@@ -150,21 +150,29 @@ export default function WorldMap({
             return d3.interpolate('#e8dcc0', COLORS.imports)(intensity);
           }
         }
+        // Country has general trade but 0 for selected product → visible neutral
+        if (selectedProduct && name && countryTotals[name]) {
+          return '#e8dcc0';
+        }
+        // No trade at all → match background (invisible)
         return '#FDF0D5';
       })
       .attr('stroke', function(d) {
         const name = findCountryName(d.id, isoToName);
-        if (name === selectedCountry) return COLORS.highlight;
+        if (name && name === selectedCountry) return COLORS.highlight;
         if (blocHighlight && blocHighlight.size > 0 && name && blocHighlight.has(name))
           return COLORS.highlight;
-        // Use same color as fill to eliminate anti-aliasing gaps
-        return d3.select(this).attr('fill');
+        const fill = d3.select(this).attr('fill');
+        if (fill === '#FDF0D5') return 'none';
+        return fill;
       })
       .attr('stroke-width', function(d) {
         const name = findCountryName(d.id, isoToName);
-        if (name === selectedCountry) return 2;
+        if (name && name === selectedCountry) return 2;
         if (blocHighlight && blocHighlight.size > 0 && name && blocHighlight.has(name))
           return 1.5;
+        const fill = d3.select(this).attr('fill');
+        if (fill === '#FDF0D5') return 0;
         return 0.5;
       })
       .style('cursor', 'pointer')
