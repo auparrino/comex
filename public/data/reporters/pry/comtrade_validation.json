@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "local",
-    "ch99_threshold": 0.05
+    "ch99_threshold": 0.2
   },
   "countries": {
     "Alemania": {
@@ -2453,63 +2453,7 @@
         "avg_imp_pct": 0.0114,
         "max_exp_pct": 0.0,
         "max_imp_pct": 0.1023,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "17",
-            "name": "AZÚCARES Y ARTÍCULOS DE CONFITERÍA",
-            "value": 41309006
-          },
-          {
-            "chapter": "42",
-            "name": "MANUFACTURAS DE CUERO; ARTÍCULOS DE TALABARTERÍA O GUARNICIONERÍA; ARTÍCULOS DE VIAJE, BOLSOS DE MANO (CARTERAS) Y CONTINENTES SIMILARES; MANUFACTURAS DE TRIPA",
-            "value": 1045556
-          },
-          {
-            "chapter": "12",
-            "name": "SEMILLAS Y FRUTOS OLEAGINOSOS; SEMILLAS Y FRUTOS DIVERSOS; PLANTAS INDUSTRIALES O MEDICINALES; PAJA Y FORRAJE",
-            "value": 609353
-          },
-          {
-            "chapter": "44",
-            "name": "MADERA, CARBÓN VEGETAL Y MANUFACTURAS DE MADERA",
-            "value": 381378
-          },
-          {
-            "chapter": "95",
-            "name": "JUGUETES, JUEGOS Y ARTÍCULOS PARA RECREO O DEPORTE; SUS PARTES Y ACCESORIOS",
-            "value": 212972
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "value": 20343902
-          },
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "value": 13042346
-          },
-          {
-            "chapter": "85",
-            "name": "MÁQUINAS, APARATOS Y MATERIAL ELÉCTRICO, Y SUS PARTES; APARATOS DE GRABACIÓN O REPRODUCCIÓN DE SONIDO, APARATOS DE GRABACIÓN O REPRODUCCIÓN DE IMAGEN Y SONIDO EN TELEVISIÓN, Y LAS PARTES Y ACCESORIOS DE ESTOS APARATOS",
-            "value": 10336117
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "value": 3621347
-          },
-          {
-            "chapter": "48",
-            "name": "PAPEL Y CARTÓN; MANUFACTURAS DE PASTA DE CELULOSA, DE PAPEL O CARTÓN",
-            "value": 3364034
-          }
-        ]
+        "high": false
       }
     },
     "Suiza": {

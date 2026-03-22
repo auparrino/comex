@@ -55,7 +55,10 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
       .reduce((s, y) => s + y.imp, 0);
   }, [yearlyData, selectedYears]);
 
-  const balance = totalExp - totalImp;
+  // Adjust totals when ch99 is excluded
+  const displayExp = include9999 ? totalExp : totalExp - (ch99Stats?.expVal || 0);
+  const displayImp = include9999 ? totalImp : totalImp - (ch99Stats?.impVal || 0);
+  const balance = displayExp - displayImp;
 
   // Products at the selected digit level
   const productData = useMemo(() => {
@@ -84,7 +87,7 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
       impPct: impTotal > 0 ? imp99 / impTotal : 0,
       expVal: exp99,
       impVal: imp99,
-      high: (expTotal > 0 && exp99 / expTotal > 0.05) || (impTotal > 0 && imp99 / impTotal > 0.05),
+      high: (expTotal > 0 && exp99 / expTotal > 0.20) || (impTotal > 0 && imp99 / impTotal > 0.20),
     };
   }, [productData]);
 
@@ -163,11 +166,11 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
       <div className="panel-kpis">
         <div className="panel-kpi">
           <span className="label">Exportaciones FOB</span>
-          <span className="value exports">{fmt(totalExp)}</span>
+          <span className="value exports">{fmt(displayExp)}</span>
         </div>
         <div className="panel-kpi">
           <span className="label">Importaciones CIF</span>
-          <span className="value imports">{fmt(totalImp)}</span>
+          <span className="value imports">{fmt(displayImp)}</span>
         </div>
         <div className="panel-kpi">
           <span className="label">Balance</span>

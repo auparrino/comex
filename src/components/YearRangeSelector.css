@@ -1,7 +1,7 @@
 .year-range-selector {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .yr-all {
@@ -29,62 +29,115 @@
   border-color: var(--text-dim);
 }
 
-.yr-bars {
-  display: flex;
-  gap: 2px;
+/* Slider container */
+.yr-slider-wrap {
+  flex: 1;
+  min-width: 140px;
+  max-width: 280px;
 }
 
-.yr-bar {
+/* Track with fill */
+.yr-slider-track {
+  position: relative;
+  height: 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 3px 4px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  color: var(--text-dim);
-  font-family: inherit;
-  font-size: 0.64rem;
-  font-weight: 600;
+}
+
+.yr-slider-track::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.yr-slider-fill {
+  position: absolute;
+  height: 4px;
+  background: var(--blue);
+  border-radius: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Range inputs overlaid */
+.yr-slider {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  pointer-events: none;
+  margin: 0;
+  z-index: 2;
+}
+
+.yr-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--dark-blue);
+  border: 2px solid var(--blue);
   cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.12s;
-  min-width: 26px;
+  pointer-events: all;
+  position: relative;
+  z-index: 3;
 }
 
-.yr-bar:hover {
-  background: var(--bg-card-hover);
-  border-color: var(--text-dim);
-  color: var(--text);
-}
-
-.yr-bar.in-range {
-  background: rgba(102, 155, 188, 0.2);
-  border-color: var(--blue);
-  color: var(--blue);
-}
-
-.yr-bar.edge {
+.yr-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
   background: var(--dark-blue);
-  color: #FDF0D5;
-  border-color: var(--blue);
+  border: 2px solid var(--blue);
+  cursor: pointer;
+  pointer-events: all;
 }
 
-.yr-bar.pending {
-  background: var(--dark-blue);
-  color: #FDF0D5;
-  border-color: var(--blue);
-  animation: pulse 0.8s ease-in-out infinite alternate;
+.yr-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  background: transparent;
 }
 
-@keyframes pulse {
-  from { opacity: 0.7; }
-  to { opacity: 1; }
+.yr-slider::-moz-range-track {
+  height: 4px;
+  background: transparent;
+  border: none;
 }
 
-.yr-label {
+/* Year tick labels */
+.yr-ticks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1px;
+  padding: 0 1px;
+}
+
+.yr-tick {
+  font-size: 0.58rem;
+  color: var(--text-dim);
+  font-weight: 500;
   line-height: 1;
+  width: 16px;
+  text-align: center;
 }
 
+.yr-tick.in-range {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+/* Range label */
 .yr-range-label {
   font-size: 0.68rem;
   color: var(--text-dim);
@@ -93,9 +146,10 @@
 }
 
 @media (max-width: 768px) {
-  .yr-bar {
-    min-width: 20px;
-    padding: 3px 2px;
-    font-size: 0.58rem;
+  .yr-slider-wrap {
+    min-width: 100px;
+  }
+  .yr-tick {
+    font-size: 0.5rem;
   }
 }

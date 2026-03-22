@@ -1052,63 +1052,7 @@
         "avg_imp_pct": 0.0,
         "max_exp_pct": 0.143,
         "max_imp_pct": 0.0,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "10",
-            "name": "CEREALES",
-            "value": 7226623352
-          },
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "value": 2864886937
-          },
-          {
-            "chapter": "04",
-            "name": "LECHE Y PRODUCTOS LÁCTEOS; HUEVOS DE AVE; MIEL NATURAL; PRODUCTOS COMESTIBLES DE ORIGEN ANIMAL NO EXPRESADOS NI COMPRENDIDOS EN OTRA PARTE",
-            "value": 2067156518
-          },
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "value": 599363517
-          },
-          {
-            "chapter": "07",
-            "name": "HORTALIZAS, PLANTAS, RAÍCES Y TUBÉRCULOS ALIMENTICIOS",
-            "value": 269931441
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "31",
-            "name": "ABONOS",
-            "value": 578667370
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "value": 255638111
-          },
-          {
-            "chapter": "25",
-            "name": "SAL; AZUFRE; TIERRAS Y PIEDRAS; YESOS, CALES Y CEMENTOS",
-            "value": 21915073
-          },
-          {
-            "chapter": "28",
-            "name": "PRODUCTOS QUÍMICOS INORGÁNICOS; COMPUESTOS INORGÁNICOS U ORGÁNICOS DE METAL PRECIOSO, DE ELEMENTOS RADIACTIVOS, DE METALES DE LAS TIERRAS RARAS O DE ISÓTOPOS",
-            "value": 9525916
-          },
-          {
-            "chapter": "70",
-            "name": "VIDRIO Y SUS MANUFACTURAS",
-            "value": 1695946
-          }
-        ]
+        "high": false
       },
       "discrepancy": {
         "by_year": {
@@ -1194,39 +1138,6 @@
           "gap_imp_pct": -0.2256
         },
         "severity": "medium"
-      },
-      "probable_products": {
-        "exp": [
-          {
-            "chapter": "10",
-            "name": "CEREALES",
-            "ct_value": 5628148172
-          },
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "ct_value": 2187148792
-          },
-          {
-            "chapter": "04",
-            "name": "LECHE Y PRODUCTOS LÁCTEOS; HUEVOS DE AVE; MIEL NATURAL; PRODUCTOS COMESTIBLES DE ORIGEN ANIMAL NO EXPRESADOS NI COMPRENDIDOS EN OTRA PARTE",
-            "ct_value": 1685385751
-          },
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "ct_value": 559767751
-          },
-          {
-            "chapter": "07",
-            "name": "HORTALIZAS, PLANTAS, RAÍCES Y TUBÉRCULOS ALIMENTICIOS",
-            "ct_value": 214304350
-          }
-        ]
-      },
-      "ch99_totals": {
-        "exp": 767711685,
-        "imp": 164
       }
     },
     "Armenia": {
@@ -4948,63 +4859,7 @@
         "avg_imp_pct": 0.0,
         "max_exp_pct": 0.165,
         "max_imp_pct": 0.0001,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "12",
-            "name": "SEMILLAS Y FRUTOS OLEAGINOSOS; SEMILLAS Y FRUTOS DIVERSOS; PLANTAS INDUSTRIALES O MEDICINALES; PAJA Y FORRAJE",
-            "value": 27316042388
-          },
-          {
-            "chapter": "02",
-            "name": "CARNE Y DESPOJOS COMESTIBLES",
-            "value": 15955282799
-          },
-          {
-            "chapter": "10",
-            "name": "CEREALES",
-            "value": 4061613983
-          },
-          {
-            "chapter": "03",
-            "name": "PESCADOS Y CRUSTÁCEOS, MOLUSCOS Y DEMÁS INVERTEBRADOS ACUÁTICOS",
-            "value": 3466340809
-          },
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "value": 3340758896
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "85",
-            "name": "MÁQUINAS, APARATOS Y MATERIAL ELÉCTRICO, Y SUS PARTES; APARATOS DE GRABACIÓN O REPRODUCCIÓN DE SONIDO, APARATOS DE GRABACIÓN O REPRODUCCIÓN DE IMAGEN Y SONIDO EN TELEVISIÓN, Y LAS PARTES Y ACCESORIOS DE ESTOS APARATOS",
-            "value": 39318063782
-          },
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "value": 29766606065
-          },
-          {
-            "chapter": "29",
-            "name": "PRODUCTOS QUÍMICOS ORGÁNICOS",
-            "value": 13110613251
-          },
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "value": 8102240102
-          },
-          {
-            "chapter": "39",
-            "name": "PLÁSTICO Y SUS MANUFACTURAS",
-            "value": 4764883721
-          }
-        ]
+        "high": false
       },
       "discrepancy": {
         "by_year": {
@@ -5090,66 +4945,6 @@
           "gap_imp_pct": -0.0143
         },
         "severity": "low"
-      },
-      "probable_products": {
-        "exp": [
-          {
-            "chapter": "12",
-            "name": "SEMILLAS Y FRUTOS OLEAGINOSOS; SEMILLAS Y FRUTOS DIVERSOS; PLANTAS INDUSTRIALES O MEDICINALES; PAJA Y FORRAJE",
-            "ct_value": 14904159974
-          },
-          {
-            "chapter": "02",
-            "name": "CARNE Y DESPOJOS COMESTIBLES",
-            "ct_value": 13825448427
-          },
-          {
-            "chapter": "10",
-            "name": "CEREALES",
-            "ct_value": 3615364743
-          },
-          {
-            "chapter": "03",
-            "name": "PESCADOS Y CRUSTÁCEOS, MOLUSCOS Y DEMÁS INVERTEBRADOS ACUÁTICOS",
-            "ct_value": 2616914215
-          },
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "ct_value": 2414415945
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "85",
-            "name": "MÁQUINAS, APARATOS Y MATERIAL ELÉCTRICO, Y SUS PARTES; APARATOS DE GRABACIÓN O REPRODUCCIÓN DE SONIDO, APARATOS DE GRABACIÓN O REPRODUCCIÓN DE IMAGEN Y SONIDO EN TELEVISIÓN, Y LAS PARTES Y ACCESORIOS DE ESTOS APARATOS",
-            "ct_value": 25212822860
-          },
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "ct_value": 18579607566
-          },
-          {
-            "chapter": "29",
-            "name": "PRODUCTOS QUÍMICOS ORGÁNICOS",
-            "ct_value": 8762601444
-          },
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "ct_value": 4004263733
-          },
-          {
-            "chapter": "39",
-            "name": "PLÁSTICO Y SUS MANUFACTURAS",
-            "ct_value": 2685730167
-          }
-        ]
-      },
-      "ch99_totals": {
-        "exp": 1985607070,
-        "imp": 2693435
       }
     },
     "Chipre": {
@@ -7088,63 +6883,7 @@
         "avg_imp_pct": 0.0,
         "max_exp_pct": 0.1085,
         "max_imp_pct": 0.0,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "value": 1997068746
-          },
-          {
-            "chapter": "10",
-            "name": "CEREALES",
-            "value": 638881163
-          },
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "value": 418537420
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "value": 415293178
-          },
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "value": 174758232
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "08",
-            "name": "FRUTAS Y FRUTOS COMESTIBLES; CORTEZAS DE AGRIOS (CÍTRICOS), MELONES O SANDÍAS",
-            "value": 2084622922
-          },
-          {
-            "chapter": "16",
-            "name": "PREPARACIONES DE CARNE, PESCADO, CRUSTÁCEOS, MOLUSCOS O DEMÁS INVERTEBRADOS ACUÁTICOS, O DE INSECTOS",
-            "value": 900085689
-          },
-          {
-            "chapter": "18",
-            "name": "CACAO Y SUS PREPARACIONES",
-            "value": 144457167
-          },
-          {
-            "chapter": "20",
-            "name": "PREPARACIONES DE HORTALIZAS, FRUTAS U OTROS FRUTOS O DEMÁS PARTES DE PLANTAS",
-            "value": 115898613
-          },
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "value": 78539407
-          }
-        ]
+        "high": false
       },
       "discrepancy": {
         "by_year": {
@@ -7230,39 +6969,6 @@
           "gap_imp_pct": 0.0386
         },
         "severity": "medium"
-      },
-      "probable_products": {
-        "exp": [
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "ct_value": 954866596
-          },
-          {
-            "chapter": "10",
-            "name": "CEREALES",
-            "ct_value": 424564883
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "ct_value": 296435571
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "ct_value": 244099391
-          },
-          {
-            "chapter": "29",
-            "name": "PRODUCTOS QUÍMICOS ORGÁNICOS",
-            "ct_value": 68828813
-          }
-        ]
-      },
-      "ch99_totals": {
-        "exp": 159158623,
-        "imp": 10647
       }
     },
     "Egipto": {
@@ -8189,63 +7895,7 @@
         "avg_imp_pct": 0.0,
         "max_exp_pct": 0.1524,
         "max_imp_pct": 0.0,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "value": 5886229108
-          },
-          {
-            "chapter": "03",
-            "name": "PESCADOS Y CRUSTÁCEOS, MOLUSCOS Y DEMÁS INVERTEBRADOS ACUÁTICOS",
-            "value": 4682220876
-          },
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "value": 843233651
-          },
-          {
-            "chapter": "08",
-            "name": "FRUTAS Y FRUTOS COMESTIBLES; CORTEZAS DE AGRIOS (CÍTRICOS), MELONES O SANDÍAS",
-            "value": 569382266
-          },
-          {
-            "chapter": "07",
-            "name": "HORTALIZAS, PLANTAS, RAÍCES Y TUBÉRCULOS ALIMENTICIOS",
-            "value": 461432316
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "value": 1925983747
-          },
-          {
-            "chapter": "85",
-            "name": "MÁQUINAS, APARATOS Y MATERIAL ELÉCTRICO, Y SUS PARTES; APARATOS DE GRABACIÓN O REPRODUCCIÓN DE SONIDO, APARATOS DE GRABACIÓN O REPRODUCCIÓN DE IMAGEN Y SONIDO EN TELEVISIÓN, Y LAS PARTES Y ACCESORIOS DE ESTOS APARATOS",
-            "value": 1243262117
-          },
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "value": 1165464974
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "value": 888284699
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "value": 728762979
-          }
-        ]
+        "high": false
       },
       "discrepancy": {
         "by_year": {
@@ -8331,66 +7981,6 @@
           "gap_imp_pct": 0.0664
         },
         "severity": "medium"
-      },
-      "probable_products": {
-        "exp": [
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "ct_value": 4253899890
-          },
-          {
-            "chapter": "03",
-            "name": "PESCADOS Y CRUSTÁCEOS, MOLUSCOS Y DEMÁS INVERTEBRADOS ACUÁTICOS",
-            "ct_value": 3442322375
-          },
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "ct_value": 405349394
-          },
-          {
-            "chapter": "08",
-            "name": "FRUTAS Y FRUTOS COMESTIBLES; CORTEZAS DE AGRIOS (CÍTRICOS), MELONES O SANDÍAS",
-            "ct_value": 397732271
-          },
-          {
-            "chapter": "07",
-            "name": "HORTALIZAS, PLANTAS, RAÍCES Y TUBÉRCULOS ALIMENTICIOS",
-            "ct_value": 325443864
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "ct_value": 1255019623
-          },
-          {
-            "chapter": "85",
-            "name": "MÁQUINAS, APARATOS Y MATERIAL ELÉCTRICO, Y SUS PARTES; APARATOS DE GRABACIÓN O REPRODUCCIÓN DE SONIDO, APARATOS DE GRABACIÓN O REPRODUCCIÓN DE IMAGEN Y SONIDO EN TELEVISIÓN, Y LAS PARTES Y ACCESORIOS DE ESTOS APARATOS",
-            "ct_value": 981389659
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "ct_value": 733733759
-          },
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "ct_value": 659801041
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "ct_value": 435732195
-          }
-        ]
-      },
-      "ch99_totals": {
-        "exp": 954990393,
-        "imp": 101818
       }
     },
     "Estado de Palestina": {
@@ -8554,63 +8144,7 @@
         "avg_imp_pct": 0.0,
         "max_exp_pct": 0.0662,
         "max_imp_pct": 0.0,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "value": 14807689003
-          },
-          {
-            "chapter": "71",
-            "name": "PERLAS FINAS (NATURALES) O CULTIVADAS, PIEDRAS PRECIOSAS O SEMIPRECIOSAS, METALES PRECIOSOS, CHAPADOS DE METAL PRECIOSO (PLAQUÉ) Y MANUFACTURAS DE ESTAS MATERIAS; BISUTERÍA; MONEDAS",
-            "value": 5069243900
-          },
-          {
-            "chapter": "76",
-            "name": "ALUMINIO Y SUS MANUFACTURAS",
-            "value": 4681344159
-          },
-          {
-            "chapter": "22",
-            "name": "BEBIDAS, LÍQUIDOS ALCOHÓLICOS Y VINAGRE",
-            "value": 2638531924
-          },
-          {
-            "chapter": "38",
-            "name": "PRODUCTOS DIVERSOS DE LAS INDUSTRIAS QUÍMICAS",
-            "value": 2336903990
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "value": 18710058906
-          },
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "value": 12350353315
-          },
-          {
-            "chapter": "39",
-            "name": "PLÁSTICO Y SUS MANUFACTURAS",
-            "value": 5495767697
-          },
-          {
-            "chapter": "29",
-            "name": "PRODUCTOS QUÍMICOS ORGÁNICOS",
-            "value": 5299155630
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "value": 4671165650
-          }
-        ]
+        "high": false
       },
       "discrepancy": {
         "by_year": {
@@ -8696,66 +8230,6 @@
           "gap_imp_pct": -0.0116
         },
         "severity": "low"
-      },
-      "probable_products": {
-        "exp": [
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "ct_value": 10425220739
-          },
-          {
-            "chapter": "22",
-            "name": "BEBIDAS, LÍQUIDOS ALCOHÓLICOS Y VINAGRE",
-            "ct_value": 1873134543
-          },
-          {
-            "chapter": "20",
-            "name": "PREPARACIONES DE HORTALIZAS, FRUTAS U OTROS FRUTOS O DEMÁS PARTES DE PLANTAS",
-            "ct_value": 1311352265
-          },
-          {
-            "chapter": "03",
-            "name": "PESCADOS Y CRUSTÁCEOS, MOLUSCOS Y DEMÁS INVERTEBRADOS ACUÁTICOS",
-            "ct_value": 1095764110
-          },
-          {
-            "chapter": "08",
-            "name": "FRUTAS Y FRUTOS COMESTIBLES; CORTEZAS DE AGRIOS (CÍTRICOS), MELONES O SANDÍAS",
-            "ct_value": 1034669837
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "ct_value": 9777978756
-          },
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "ct_value": 8105595690
-          },
-          {
-            "chapter": "39",
-            "name": "PLÁSTICO Y SUS MANUFACTURAS",
-            "ct_value": 3705912947
-          },
-          {
-            "chapter": "29",
-            "name": "PRODUCTOS QUÍMICOS ORGÁNICOS",
-            "ct_value": 3534275552
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "ct_value": 3461992336
-          }
-        ]
-      },
-      "ch99_totals": {
-        "exp": 1078424831,
-        "imp": 362769
       }
     },
     "Estonia": {
@@ -11158,63 +10632,7 @@
         "avg_imp_pct": 0.0005,
         "max_exp_pct": 0.1502,
         "max_imp_pct": 0.0012,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "16",
-            "name": "PREPARACIONES DE CARNE, PESCADO, CRUSTÁCEOS, MOLUSCOS O DEMÁS INVERTEBRADOS ACUÁTICOS, O DE INSECTOS",
-            "value": 593737632
-          },
-          {
-            "chapter": "41",
-            "name": "PIELES (EXCEPTO LA PELETERÍA) Y CUEROS",
-            "value": 563009795
-          },
-          {
-            "chapter": "02",
-            "name": "CARNE Y DESPOJOS COMESTIBLES",
-            "value": 442667657
-          },
-          {
-            "chapter": "03",
-            "name": "PESCADOS Y CRUSTÁCEOS, MOLUSCOS Y DEMÁS INVERTEBRADOS ACUÁTICOS",
-            "value": 42192799
-          },
-          {
-            "chapter": "08",
-            "name": "FRUTAS Y FRUTOS COMESTIBLES; CORTEZAS DE AGRIOS (CÍTRICOS), MELONES O SANDÍAS",
-            "value": 39965278
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "85",
-            "name": "MÁQUINAS, APARATOS Y MATERIAL ELÉCTRICO, Y SUS PARTES; APARATOS DE GRABACIÓN O REPRODUCCIÓN DE SONIDO, APARATOS DE GRABACIÓN O REPRODUCCIÓN DE IMAGEN Y SONIDO EN TELEVISIÓN, Y LAS PARTES Y ACCESORIOS DE ESTOS APARATOS",
-            "value": 87700578
-          },
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "value": 16307188
-          },
-          {
-            "chapter": "49",
-            "name": "PRODUCTOS EDITORIALES, DE LA PRENSA Y DE LAS DEMÁS INDUSTRIAS GRÁFICAS; TEXTOS MANUSCRITOS O MECANOGRAFIADOS Y PLANOS",
-            "value": 9451795
-          },
-          {
-            "chapter": "76",
-            "name": "ALUMINIO Y SUS MANUFACTURAS",
-            "value": 6757333
-          },
-          {
-            "chapter": "39",
-            "name": "PLÁSTICO Y SUS MANUFACTURAS",
-            "value": 5242875
-          }
-        ]
+        "high": false
       },
       "discrepancy": {
         "by_year": {
@@ -11300,39 +10718,6 @@
           "gap_imp_pct": -0.0445
         },
         "severity": "medium"
-      },
-      "probable_products": {
-        "exp": [
-          {
-            "chapter": "16",
-            "name": "PREPARACIONES DE CARNE, PESCADO, CRUSTÁCEOS, MOLUSCOS O DEMÁS INVERTEBRADOS ACUÁTICOS, O DE INSECTOS",
-            "ct_value": 461244264
-          },
-          {
-            "chapter": "41",
-            "name": "PIELES (EXCEPTO LA PELETERÍA) Y CUEROS",
-            "ct_value": 353294099
-          },
-          {
-            "chapter": "02",
-            "name": "CARNE Y DESPOJOS COMESTIBLES",
-            "ct_value": 312267592
-          },
-          {
-            "chapter": "03",
-            "name": "PESCADOS Y CRUSTÁCEOS, MOLUSCOS Y DEMÁS INVERTEBRADOS ACUÁTICOS",
-            "ct_value": 22374866
-          },
-          {
-            "chapter": "05",
-            "name": "LOS DEMÁS PRODUCTOS DE ORIGEN ANIMAL NO EXPRESADOS NI COMPRENDIDOS EN OTRA PARTE",
-            "ct_value": 21249092
-          }
-        ]
-      },
-      "ch99_totals": {
-        "exp": 74463413,
-        "imp": 26298
       }
     },
     "Hungría": {
@@ -11660,63 +11045,7 @@
         "avg_imp_pct": 0.0,
         "max_exp_pct": 0.147,
         "max_imp_pct": 0.0001,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "value": 28180177837
-          },
-          {
-            "chapter": "71",
-            "name": "PERLAS FINAS (NATURALES) O CULTIVADAS, PIEDRAS PRECIOSAS O SEMIPRECIOSAS, METALES PRECIOSOS, CHAPADOS DE METAL PRECIOSO (PLAQUÉ) Y MANUFACTURAS DE ESTAS MATERIAS; BISUTERÍA; MONEDAS",
-            "value": 407040028
-          },
-          {
-            "chapter": "41",
-            "name": "PIELES (EXCEPTO LA PELETERÍA) Y CUEROS",
-            "value": 343053196
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "value": 193515030
-          },
-          {
-            "chapter": "10",
-            "name": "CEREALES",
-            "value": 170429121
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "29",
-            "name": "PRODUCTOS QUÍMICOS ORGÁNICOS",
-            "value": 2942183221
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "value": 1629388196
-          },
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "value": 1297318654
-          },
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "value": 1253667923
-          },
-          {
-            "chapter": "72",
-            "name": "FUNDICIÓN, HIERRO Y ACERO",
-            "value": 541210490
-          }
-        ]
+        "high": false
       },
       "discrepancy": {
         "by_year": {
@@ -11802,66 +11131,6 @@
           "gap_imp_pct": -0.0834
         },
         "severity": "low"
-      },
-      "probable_products": {
-        "exp": [
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "ct_value": 19186248963
-          },
-          {
-            "chapter": "71",
-            "name": "PERLAS FINAS (NATURALES) O CULTIVADAS, PIEDRAS PRECIOSAS O SEMIPRECIOSAS, METALES PRECIOSOS, CHAPADOS DE METAL PRECIOSO (PLAQUÉ) Y MANUFACTURAS DE ESTAS MATERIAS; BISUTERÍA; MONEDAS",
-            "ct_value": 302995636
-          },
-          {
-            "chapter": "41",
-            "name": "PIELES (EXCEPTO LA PELETERÍA) Y CUEROS",
-            "ct_value": 234463319
-          },
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "ct_value": 125865506
-          },
-          {
-            "chapter": "10",
-            "name": "CEREALES",
-            "ct_value": 80128811
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "29",
-            "name": "PRODUCTOS QUÍMICOS ORGÁNICOS",
-            "ct_value": 1954412573
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "ct_value": 1247455785
-          },
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "ct_value": 612222204
-          },
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "ct_value": 561029644
-          },
-          {
-            "chapter": "72",
-            "name": "FUNDICIÓN, HIERRO Y ACERO",
-            "ct_value": 452278166
-          }
-        ]
-      },
-      "ch99_totals": {
-        "exp": 2457565471,
-        "imp": 250860
       }
     },
     "Indonesia": {
@@ -13152,63 +12421,7 @@
         "avg_imp_pct": 0.0,
         "max_exp_pct": 0.1176,
         "max_imp_pct": 0.0,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "value": 5463829744
-          },
-          {
-            "chapter": "03",
-            "name": "PESCADOS Y CRUSTÁCEOS, MOLUSCOS Y DEMÁS INVERTEBRADOS ACUÁTICOS",
-            "value": 1506718346
-          },
-          {
-            "chapter": "02",
-            "name": "CARNE Y DESPOJOS COMESTIBLES",
-            "value": 687078432
-          },
-          {
-            "chapter": "08",
-            "name": "FRUTAS Y FRUTOS COMESTIBLES; CORTEZAS DE AGRIOS (CÍTRICOS), MELONES O SANDÍAS",
-            "value": 530354851
-          },
-          {
-            "chapter": "07",
-            "name": "HORTALIZAS, PLANTAS, RAÍCES Y TUBÉRCULOS ALIMENTICIOS",
-            "value": 460522973
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "value": 6155946900
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "value": 1708910521
-          },
-          {
-            "chapter": "85",
-            "name": "MÁQUINAS, APARATOS Y MATERIAL ELÉCTRICO, Y SUS PARTES; APARATOS DE GRABACIÓN O REPRODUCCIÓN DE SONIDO, APARATOS DE GRABACIÓN O REPRODUCCIÓN DE IMAGEN Y SONIDO EN TELEVISIÓN, Y LAS PARTES Y ACCESORIOS DE ESTOS APARATOS",
-            "value": 1222198710
-          },
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "value": 741766832
-          },
-          {
-            "chapter": "90",
-            "name": "INSTRUMENTOS Y APARATOS DE ÓPTICA, FOTOGRAFÍA O CINEMATOGRAFÍA, DE MEDIDA, CONTROL O PRECISIÓN; INSTRUMENTOS Y APARATOS MEDICOQUIRÚRGICOS; PARTES Y ACCESORIOS DE ESTOS INSTRUMENTOS O APARATOS",
-            "value": 660682389
-          }
-        ]
+        "high": false
       },
       "discrepancy": {
         "by_year": {
@@ -13294,66 +12507,6 @@
           "gap_imp_pct": 0.0155
         },
         "severity": "medium"
-      },
-      "probable_products": {
-        "exp": [
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "ct_value": 3758249828
-          },
-          {
-            "chapter": "03",
-            "name": "PESCADOS Y CRUSTÁCEOS, MOLUSCOS Y DEMÁS INVERTEBRADOS ACUÁTICOS",
-            "ct_value": 1186080694
-          },
-          {
-            "chapter": "02",
-            "name": "CARNE Y DESPOJOS COMESTIBLES",
-            "ct_value": 466025394
-          },
-          {
-            "chapter": "08",
-            "name": "FRUTAS Y FRUTOS COMESTIBLES; CORTEZAS DE AGRIOS (CÍTRICOS), MELONES O SANDÍAS",
-            "ct_value": 349984992
-          },
-          {
-            "chapter": "07",
-            "name": "HORTALIZAS, PLANTAS, RAÍCES Y TUBÉRCULOS ALIMENTICIOS",
-            "ct_value": 331744244
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "ct_value": 3855890980
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "ct_value": 1359771208
-          },
-          {
-            "chapter": "85",
-            "name": "MÁQUINAS, APARATOS Y MATERIAL ELÉCTRICO, Y SUS PARTES; APARATOS DE GRABACIÓN O REPRODUCCIÓN DE SONIDO, APARATOS DE GRABACIÓN O REPRODUCCIÓN DE IMAGEN Y SONIDO EN TELEVISIÓN, Y LAS PARTES Y ACCESORIOS DE ESTOS APARATOS",
-            "ct_value": 681570533
-          },
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "ct_value": 450591229
-          },
-          {
-            "chapter": "90",
-            "name": "INSTRUMENTOS Y APARATOS DE ÓPTICA, FOTOGRAFÍA O CINEMATOGRAFÍA, DE MEDIDA, CONTROL O PRECISIÓN; INSTRUMENTOS Y APARATOS MEDICOQUIRÚRGICOS; PARTES Y ACCESORIOS DE ESTOS INSTRUMENTOS O APARATOS",
-            "ct_value": 394925990
-          }
-        ]
-      },
-      "ch99_totals": {
-        "exp": 394524123,
-        "imp": 119164
       }
     },
     "Jamaica": {
@@ -15806,63 +14959,7 @@
         "avg_imp_pct": 0.0,
         "max_exp_pct": 0.1489,
         "max_imp_pct": 0.0,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "10",
-            "name": "CEREALES",
-            "value": 5480028720
-          },
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "value": 5021424707
-          },
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "value": 599850333
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "value": 155109693
-          },
-          {
-            "chapter": "12",
-            "name": "SEMILLAS Y FRUTOS OLEAGINOSOS; SEMILLAS Y FRUTOS DIVERSOS; PLANTAS INDUSTRIALES O MEDICINALES; PAJA Y FORRAJE",
-            "value": 126678640
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "85",
-            "name": "MÁQUINAS, APARATOS Y MATERIAL ELÉCTRICO, Y SUS PARTES; APARATOS DE GRABACIÓN O REPRODUCCIÓN DE SONIDO, APARATOS DE GRABACIÓN O REPRODUCCIÓN DE IMAGEN Y SONIDO EN TELEVISIÓN, Y LAS PARTES Y ACCESORIOS DE ESTOS APARATOS",
-            "value": 1128483127
-          },
-          {
-            "chapter": "40",
-            "name": "CAUCHO Y SUS MANUFACTURAS",
-            "value": 555944187
-          },
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "value": 496863086
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "value": 422768472
-          },
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "value": 215842047
-          }
-        ]
+        "high": false
       },
       "discrepancy": {
         "by_year": {
@@ -15948,39 +15045,6 @@
           "gap_imp_pct": 0.1795
         },
         "severity": "low"
-      },
-      "probable_products": {
-        "exp": [
-          {
-            "chapter": "10",
-            "name": "CEREALES",
-            "ct_value": 4255018973
-          },
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "ct_value": 3974457421
-          },
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "ct_value": 196559475
-          },
-          {
-            "chapter": "07",
-            "name": "HORTALIZAS, PLANTAS, RAÍCES Y TUBÉRCULOS ALIMENTICIOS",
-            "ct_value": 20674886
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "ct_value": 15813896
-          }
-        ]
-      },
-      "ch99_totals": {
-        "exp": 613386074,
-        "imp": 24601
       }
     },
     "Malawi": {
@@ -17342,63 +16406,7 @@
         "avg_imp_pct": 0.0,
         "max_exp_pct": 0.1336,
         "max_imp_pct": 0.0,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "value": 1531531428
-          },
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "value": 936487817
-          },
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "value": 758200894
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "value": 440443968
-          },
-          {
-            "chapter": "41",
-            "name": "PIELES (EXCEPTO LA PELETERÍA) Y CUEROS",
-            "value": 391605046
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "value": 5635213870
-          },
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "value": 2481808655
-          },
-          {
-            "chapter": "85",
-            "name": "MÁQUINAS, APARATOS Y MATERIAL ELÉCTRICO, Y SUS PARTES; APARATOS DE GRABACIÓN O REPRODUCCIÓN DE SONIDO, APARATOS DE GRABACIÓN O REPRODUCCIÓN DE IMAGEN Y SONIDO EN TELEVISIÓN, Y LAS PARTES Y ACCESORIOS DE ESTOS APARATOS",
-            "value": 2327682063
-          },
-          {
-            "chapter": "33",
-            "name": "ACEITES ESENCIALES Y RESINOIDES; PREPARACIONES DE PERFUMERÍA, DE TOCADOR O DE COSMÉTICA",
-            "value": 1064230660
-          },
-          {
-            "chapter": "90",
-            "name": "INSTRUMENTOS Y APARATOS DE ÓPTICA, FOTOGRAFÍA O CINEMATOGRAFÍA, DE MEDIDA, CONTROL O PRECISIÓN; INSTRUMENTOS Y APARATOS MEDICOQUIRÚRGICOS; PARTES Y ACCESORIOS DE ESTOS INSTRUMENTOS O APARATOS",
-            "value": 955226589
-          }
-        ]
+        "high": false
       },
       "discrepancy": {
         "by_year": {
@@ -17484,39 +16492,6 @@
           "gap_imp_pct": 0.0596
         },
         "severity": "low"
-      },
-      "probable_products": {
-        "exp": [
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "ct_value": 677928998
-          },
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "ct_value": 442335637
-          },
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "ct_value": 379216090
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "ct_value": 258796650
-          },
-          {
-            "chapter": "29",
-            "name": "PRODUCTOS QUÍMICOS ORGÁNICOS",
-            "ct_value": 190284216
-          }
-        ]
-      },
-      "ch99_totals": {
-        "exp": 544362269,
-        "imp": 72271
       }
     },
     "Namibia": {
@@ -19447,63 +18422,7 @@
         "avg_imp_pct": 0.0,
         "max_exp_pct": 0.0575,
         "max_imp_pct": 0.0,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "value": 2897476877
-          },
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "value": 1169921038
-          },
-          {
-            "chapter": "72",
-            "name": "FUNDICIÓN, HIERRO Y ACERO",
-            "value": 907274608
-          },
-          {
-            "chapter": "38",
-            "name": "PRODUCTOS DIVERSOS DE LAS INDUSTRIAS QUÍMICAS",
-            "value": 854938964
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "value": 613840614
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "12",
-            "name": "SEMILLAS Y FRUTOS OLEAGINOSOS; SEMILLAS Y FRUTOS DIVERSOS; PLANTAS INDUSTRIALES O MEDICINALES; PAJA Y FORRAJE",
-            "value": 17333212618
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "value": 3332659203
-          },
-          {
-            "chapter": "85",
-            "name": "MÁQUINAS, APARATOS Y MATERIAL ELÉCTRICO, Y SUS PARTES; APARATOS DE GRABACIÓN O REPRODUCCIÓN DE SONIDO, APARATOS DE GRABACIÓN O REPRODUCCIÓN DE IMAGEN Y SONIDO EN TELEVISIÓN, Y LAS PARTES Y ACCESORIOS DE ESTOS APARATOS",
-            "value": 515755033
-          },
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "value": 311313649
-          },
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "value": 230618766
-          }
-        ]
+        "high": false
       },
       "discrepancy": {
         "by_year": {
@@ -19589,39 +18508,6 @@
           "gap_imp_pct": -0.0139
         },
         "severity": "medium"
-      },
-      "probable_products": {
-        "exp": [
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "ct_value": 2161595555
-          },
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "ct_value": 649792391
-          },
-          {
-            "chapter": "38",
-            "name": "PRODUCTOS DIVERSOS DE LAS INDUSTRIAS QUÍMICAS",
-            "ct_value": 581504325
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "ct_value": 413683588
-          },
-          {
-            "chapter": "39",
-            "name": "PLÁSTICO Y SUS MANUFACTURAS",
-            "ct_value": 299045506
-          }
-        ]
-      },
-      "ch99_totals": {
-        "exp": 208087948,
-        "imp": 14133
       }
     },
     "Países Bajos": {
@@ -19698,63 +18584,7 @@
         "avg_imp_pct": 0.0,
         "max_exp_pct": 0.128,
         "max_imp_pct": 0.0,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "38",
-            "name": "PRODUCTOS DIVERSOS DE LAS INDUSTRIAS QUÍMICAS",
-            "value": 6648927419
-          },
-          {
-            "chapter": "12",
-            "name": "SEMILLAS Y FRUTOS OLEAGINOSOS; SEMILLAS Y FRUTOS DIVERSOS; PLANTAS INDUSTRIALES O MEDICINALES; PAJA Y FORRAJE",
-            "value": 2961189603
-          },
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "value": 2832794923
-          },
-          {
-            "chapter": "02",
-            "name": "CARNE Y DESPOJOS COMESTIBLES",
-            "value": 1789874711
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "value": 1602821482
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "value": 2749255028
-          },
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "value": 540733477
-          },
-          {
-            "chapter": "31",
-            "name": "ABONOS",
-            "value": 413883433
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "value": 368539998
-          },
-          {
-            "chapter": "90",
-            "name": "INSTRUMENTOS Y APARATOS DE ÓPTICA, FOTOGRAFÍA O CINEMATOGRAFÍA, DE MEDIDA, CONTROL O PRECISIÓN; INSTRUMENTOS Y APARATOS MEDICOQUIRÚRGICOS; PARTES Y ACCESORIOS DE ESTOS INSTRUMENTOS O APARATOS",
-            "value": 272205922
-          }
-        ]
+        "high": false
       },
       "discrepancy": {
         "by_year": {
@@ -19840,39 +18670,6 @@
           "gap_imp_pct": 0.0104
         },
         "severity": "low"
-      },
-      "probable_products": {
-        "exp": [
-          {
-            "chapter": "38",
-            "name": "PRODUCTOS DIVERSOS DE LAS INDUSTRIAS QUÍMICAS",
-            "ct_value": 6484972324
-          },
-          {
-            "chapter": "12",
-            "name": "SEMILLAS Y FRUTOS OLEAGINOSOS; SEMILLAS Y FRUTOS DIVERSOS; PLANTAS INDUSTRIALES O MEDICINALES; PAJA Y FORRAJE",
-            "ct_value": 2124239712
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "ct_value": 1535911837
-          },
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "ct_value": 1467696898
-          },
-          {
-            "chapter": "02",
-            "name": "CARNE Y DESPOJOS COMESTIBLES",
-            "ct_value": 1232976597
-          }
-        ]
-      },
-      "ch99_totals": {
-        "exp": 921033022,
-        "imp": 37253
       }
     },
     "Perú": {
@@ -19949,63 +18746,7 @@
         "avg_imp_pct": 0.0001,
         "max_exp_pct": 0.064,
         "max_imp_pct": 0.0002,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "10",
-            "name": "CEREALES",
-            "value": 6120324135
-          },
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "value": 3627490556
-          },
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "value": 3205381562
-          },
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "value": 828898138
-          },
-          {
-            "chapter": "03",
-            "name": "PESCADOS Y CRUSTÁCEOS, MOLUSCOS Y DEMÁS INVERTEBRADOS ACUÁTICOS",
-            "value": 558695322
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "25",
-            "name": "SAL; AZUFRE; TIERRAS Y PIEDRAS; YESOS, CALES Y CEMENTOS",
-            "value": 396175824
-          },
-          {
-            "chapter": "18",
-            "name": "CACAO Y SUS PREPARACIONES",
-            "value": 210009737
-          },
-          {
-            "chapter": "74",
-            "name": "COBRE Y SUS MANUFACTURAS",
-            "value": 194034058
-          },
-          {
-            "chapter": "61",
-            "name": "PRENDAS Y COMPLEMENTOS (ACCESORIOS), DE VESTIR, DE PUNTO",
-            "value": 181982442
-          },
-          {
-            "chapter": "39",
-            "name": "PLÁSTICO Y SUS MANUFACTURAS",
-            "value": 123134710
-          }
-        ]
+        "high": false
       },
       "discrepancy": {
         "by_year": {
@@ -20091,39 +18832,6 @@
           "gap_imp_pct": -0.1062
         },
         "severity": "low"
-      },
-      "probable_products": {
-        "exp": [
-          {
-            "chapter": "10",
-            "name": "CEREALES",
-            "ct_value": 4914853600
-          },
-          {
-            "chapter": "15",
-            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
-            "ct_value": 2387631849
-          },
-          {
-            "chapter": "87",
-            "name": "VEHÍCULOS AUTOMÓVILES, TRACTORES, VELOCÍPEDOS Y DEMÁS VEHÍCULOS TERRESTRES, SUS PARTES Y ACCESORIOS",
-            "ct_value": 2233130940
-          },
-          {
-            "chapter": "03",
-            "name": "PESCADOS Y CRUSTÁCEOS, MOLUSCOS Y DEMÁS INVERTEBRADOS ACUÁTICOS",
-            "ct_value": 468785646
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "ct_value": 433953469
-          }
-        ]
-      },
-      "ch99_totals": {
-        "exp": 493629302,
-        "imp": 51790
       }
     },
     "Polonia": {
@@ -21086,63 +19794,7 @@
         "avg_imp_pct": 0.0,
         "max_exp_pct": 0.1883,
         "max_imp_pct": 0.0,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "value": 3861242928
-          },
-          {
-            "chapter": "22",
-            "name": "BEBIDAS, LÍQUIDOS ALCOHÓLICOS Y VINAGRE",
-            "value": 1177252865
-          },
-          {
-            "chapter": "12",
-            "name": "SEMILLAS Y FRUTOS OLEAGINOSOS; SEMILLAS Y FRUTOS DIVERSOS; PLANTAS INDUSTRIALES O MEDICINALES; PAJA Y FORRAJE",
-            "value": 479656867
-          },
-          {
-            "chapter": "10",
-            "name": "CEREALES",
-            "value": 401923104
-          },
-          {
-            "chapter": "08",
-            "name": "FRUTAS Y FRUTOS COMESTIBLES; CORTEZAS DE AGRIOS (CÍTRICOS), MELONES O SANDÍAS",
-            "value": 216566286
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "value": 1156305750
-          },
-          {
-            "chapter": "71",
-            "name": "PERLAS FINAS (NATURALES) O CULTIVADAS, PIEDRAS PRECIOSAS O SEMIPRECIOSAS, METALES PRECIOSOS, CHAPADOS DE METAL PRECIOSO (PLAQUÉ) Y MANUFACTURAS DE ESTAS MATERIAS; BISUTERÍA; MONEDAS",
-            "value": 792523038
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "value": 738994263
-          },
-          {
-            "chapter": "90",
-            "name": "INSTRUMENTOS Y APARATOS DE ÓPTICA, FOTOGRAFÍA O CINEMATOGRAFÍA, DE MEDIDA, CONTROL O PRECISIÓN; INSTRUMENTOS Y APARATOS MEDICOQUIRÚRGICOS; PARTES Y ACCESORIOS DE ESTOS INSTRUMENTOS O APARATOS",
-            "value": 411081860
-          },
-          {
-            "chapter": "38",
-            "name": "PRODUCTOS DIVERSOS DE LAS INDUSTRIAS QUÍMICAS",
-            "value": 359832252
-          }
-        ]
+        "high": false
       },
       "discrepancy": {
         "by_year": {
@@ -21228,66 +19880,6 @@
           "gap_imp_pct": 0.0933
         },
         "severity": "medium"
-      },
-      "probable_products": {
-        "exp": [
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "ct_value": 2809824135
-          },
-          {
-            "chapter": "22",
-            "name": "BEBIDAS, LÍQUIDOS ALCOHÓLICOS Y VINAGRE",
-            "ct_value": 901252849
-          },
-          {
-            "chapter": "12",
-            "name": "SEMILLAS Y FRUTOS OLEAGINOSOS; SEMILLAS Y FRUTOS DIVERSOS; PLANTAS INDUSTRIALES O MEDICINALES; PAJA Y FORRAJE",
-            "ct_value": 359833188
-          },
-          {
-            "chapter": "10",
-            "name": "CEREALES",
-            "ct_value": 308197187
-          },
-          {
-            "chapter": "20",
-            "name": "PREPARACIONES DE HORTALIZAS, FRUTAS U OTROS FRUTOS O DEMÁS PARTES DE PLANTAS",
-            "ct_value": 120365107
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "71",
-            "name": "PERLAS FINAS (NATURALES) O CULTIVADAS, PIEDRAS PRECIOSAS O SEMIPRECIOSAS, METALES PRECIOSOS, CHAPADOS DE METAL PRECIOSO (PLAQUÉ) Y MANUFACTURAS DE ESTAS MATERIAS; BISUTERÍA; MONEDAS",
-            "ct_value": 767998693
-          },
-          {
-            "chapter": "84",
-            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
-            "ct_value": 615485444
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "ct_value": 591290822
-          },
-          {
-            "chapter": "38",
-            "name": "PRODUCTOS DIVERSOS DE LAS INDUSTRIAS QUÍMICAS",
-            "ct_value": 268607033
-          },
-          {
-            "chapter": "90",
-            "name": "INSTRUMENTOS Y APARATOS DE ÓPTICA, FOTOGRAFÍA O CINEMATOGRAFÍA, DE MEDIDA, CONTROL O PRECISIÓN; INSTRUMENTOS Y APARATOS MEDICOQUIRÚRGICOS; PARTES Y ACCESORIOS DE ESTOS INSTRUMENTOS O APARATOS",
-            "ct_value": 248631762
-          }
-        ]
-      },
-      "ch99_totals": {
-        "exp": 510839558,
-        "imp": 103988
       }
     },
     "Rep. Dem. del Congo": {
@@ -21953,63 +20545,7 @@
         "avg_imp_pct": 0.0,
         "max_exp_pct": 0.1887,
         "max_imp_pct": 0.0,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "02",
-            "name": "CARNE Y DESPOJOS COMESTIBLES",
-            "value": 1374228500
-          },
-          {
-            "chapter": "08",
-            "name": "FRUTAS Y FRUTOS COMESTIBLES; CORTEZAS DE AGRIOS (CÍTRICOS), MELONES O SANDÍAS",
-            "value": 1173980021
-          },
-          {
-            "chapter": "04",
-            "name": "LECHE Y PRODUCTOS LÁCTEOS; HUEVOS DE AVE; MIEL NATURAL; PRODUCTOS COMESTIBLES DE ORIGEN ANIMAL NO EXPRESADOS NI COMPRENDIDOS EN OTRA PARTE",
-            "value": 977576805
-          },
-          {
-            "chapter": "12",
-            "name": "SEMILLAS Y FRUTOS OLEAGINOSOS; SEMILLAS Y FRUTOS DIVERSOS; PLANTAS INDUSTRIALES O MEDICINALES; PAJA Y FORRAJE",
-            "value": 720998350
-          },
-          {
-            "chapter": "03",
-            "name": "PESCADOS Y CRUSTÁCEOS, MOLUSCOS Y DEMÁS INVERTEBRADOS ACUÁTICOS",
-            "value": 646781969
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "31",
-            "name": "ABONOS",
-            "value": 1689120179
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "value": 1236551704
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "value": 231664929
-          },
-          {
-            "chapter": "72",
-            "name": "FUNDICIÓN, HIERRO Y ACERO",
-            "value": 160444638
-          },
-          {
-            "chapter": "40",
-            "name": "CAUCHO Y SUS MANUFACTURAS",
-            "value": 138723981
-          }
-        ]
+        "high": false
       },
       "discrepancy": {
         "by_year": {
@@ -22095,39 +20631,6 @@
           "gap_imp_pct": 0.49
         },
         "severity": "medium"
-      },
-      "probable_products": {
-        "exp": [
-          {
-            "chapter": "02",
-            "name": "CARNE Y DESPOJOS COMESTIBLES",
-            "ct_value": 1235697949
-          },
-          {
-            "chapter": "08",
-            "name": "FRUTAS Y FRUTOS COMESTIBLES; CORTEZAS DE AGRIOS (CÍTRICOS), MELONES O SANDÍAS",
-            "ct_value": 835471545
-          },
-          {
-            "chapter": "04",
-            "name": "LECHE Y PRODUCTOS LÁCTEOS; HUEVOS DE AVE; MIEL NATURAL; PRODUCTOS COMESTIBLES DE ORIGEN ANIMAL NO EXPRESADOS NI COMPRENDIDOS EN OTRA PARTE",
-            "ct_value": 601928931
-          },
-          {
-            "chapter": "03",
-            "name": "PESCADOS Y CRUSTÁCEOS, MOLUSCOS Y DEMÁS INVERTEBRADOS ACUÁTICOS",
-            "ct_value": 525067286
-          },
-          {
-            "chapter": "12",
-            "name": "SEMILLAS Y FRUTOS OLEAGINOSOS; SEMILLAS Y FRUTOS DIVERSOS; PLANTAS INDUSTRIALES O MEDICINALES; PAJA Y FORRAJE",
-            "ct_value": 236693102
-          }
-        ]
-      },
-      "ch99_totals": {
-        "exp": 266776304,
-        "imp": 4281
       }
     },
     "Rwanda": {
@@ -25986,63 +24489,7 @@
         "avg_imp_pct": 0.0,
         "max_exp_pct": 0.0759,
         "max_imp_pct": 0.0,
-        "high": true
-      },
-      "known_products": {
-        "exp": [
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "value": 1701390783
-          },
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "value": 1231919031
-          },
-          {
-            "chapter": "39",
-            "name": "PLÁSTICO Y SUS MANUFACTURAS",
-            "value": 982228701
-          },
-          {
-            "chapter": "38",
-            "name": "PRODUCTOS DIVERSOS DE LAS INDUSTRIAS QUÍMICAS",
-            "value": 804649241
-          },
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "value": 765987737
-          }
-        ],
-        "imp": [
-          {
-            "chapter": "12",
-            "name": "SEMILLAS Y FRUTOS OLEAGINOSOS; SEMILLAS Y FRUTOS DIVERSOS; PLANTAS INDUSTRIALES O MEDICINALES; PAJA Y FORRAJE",
-            "value": 901727155
-          },
-          {
-            "chapter": "47",
-            "name": "PASTA DE MADERA O DE LAS DEMÁS MATERIAS FIBROSAS CELULÓSICAS; PAPEL O CARTÓN PARA RECICLAR (DESPERDICIOS Y DESECHOS)",
-            "value": 671861062
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "value": 632120451
-          },
-          {
-            "chapter": "39",
-            "name": "PLÁSTICO Y SUS MANUFACTURAS",
-            "value": 579249198
-          },
-          {
-            "chapter": "85",
-            "name": "MÁQUINAS, APARATOS Y MATERIAL ELÉCTRICO, Y SUS PARTES; APARATOS DE GRABACIÓN O REPRODUCCIÓN DE SONIDO, APARATOS DE GRABACIÓN O REPRODUCCIÓN DE IMAGEN Y SONIDO EN TELEVISIÓN, Y LAS PARTES Y ACCESORIOS DE ESTOS APARATOS",
-            "value": 508149315
-          }
-        ]
+        "high": false
       },
       "discrepancy": {
         "by_year": {
@@ -26128,39 +24575,6 @@
           "gap_imp_pct": -0.2226
         },
         "severity": "low"
-      },
-      "probable_products": {
-        "exp": [
-          {
-            "chapter": "30",
-            "name": "PRODUCTOS FARMACÉUTICOS",
-            "ct_value": 971190235
-          },
-          {
-            "chapter": "27",
-            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
-            "ct_value": 817953442
-          },
-          {
-            "chapter": "39",
-            "name": "PLÁSTICO Y SUS MANUFACTURAS",
-            "ct_value": 528222342
-          },
-          {
-            "chapter": "23",
-            "name": "RESIDUOS Y DESPERDICIOS DE LAS INDUSTRIAS ALIMENTARIAS; ALIMENTOS PREPARADOS PARA ANIMALES",
-            "ct_value": 527608391
-          },
-          {
-            "chapter": "38",
-            "name": "PRODUCTOS DIVERSOS DE LAS INDUSTRIAS QUÍMICAS",
-            "ct_value": 488231487
-          }
-        ]
-      },
-      "ch99_totals": {
-        "exp": 163886786,
-        "imp": 32589
       }
     },
     "Uzbekistán": {

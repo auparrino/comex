@@ -15,7 +15,7 @@ SCRIPT_DIR = Path(__file__).parent
 DATA_DIR = SCRIPT_DIR.parent / "public" / "data"
 REPORTERS = ["arg", "ury", "pry"]
 
-CH99_THRESHOLD = 0.05  # 5%
+CH99_THRESHOLD = 0.20  # 20%
 
 
 def process_reporter(reporter_key):

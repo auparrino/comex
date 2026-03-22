@@ -34,7 +34,7 @@ YEARS = [str(y) for y in range(2015, 2025)]
 
 # Top partners to validate (by Comtrade code)
 # We'll detect these from INDEC data
-CH99_THRESHOLD = 0.05  # 5% to flag as "high ch99"
+CH99_THRESHOLD = 0.20  # 20% to flag as "high ch99"
 
 
 def fetch_cached(cache_key, params):
