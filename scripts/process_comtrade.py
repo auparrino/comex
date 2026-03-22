@@ -23,7 +23,7 @@ REPORTERS = {
     "pry": {"code": 600, "name": "Paraguay", "iso2": "PY", "coords": [-25.3, -57.6]},
 }
 
-YEARS = [str(y) for y in range(2018, 2025)]
+YEARS = [str(y) for y in range(2015, 2025)]
 
 # ISO3 to ISO2 mapping for common countries
 ISO3_TO_ISO2 = {}

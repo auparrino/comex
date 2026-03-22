@@ -47,6 +47,7 @@ export default function TopPartners({
   onBlocHighlight,
   onSelectBloc,
   selectedBloc,
+  comtradeValidation,
 }) {
   const [search, setSearch] = useState('');
   const [concept, setConcept] = useState('total');
@@ -297,6 +298,8 @@ export default function TopPartners({
           }
 
           rank++;
+          const cv = comtradeValidation?.[c.name];
+          const isHighCh99 = cv?.ch99?.high;
           return (
             <button
               key={c.name}
@@ -304,7 +307,17 @@ export default function TopPartners({
               onClick={() => onSelect(c.name)}
             >
               <span className="rank">{rank}</span>
-              <span className="name">{c.name}</span>
+              <span className="name">
+                {c.name}
+                {isHighCh99 && (
+                  <span
+                    className="ch99-badge"
+                    title={`Alto % confidencial: exp ${(cv.ch99.max_exp_pct * 100).toFixed(0)}%, imp ${(cv.ch99.max_imp_pct * 100).toFixed(0)}%`}
+                  >
+                    9999
+                  </span>
+                )}
+              </span>
               {renderBar(c)}
               {renderValue(c)}
             </button>

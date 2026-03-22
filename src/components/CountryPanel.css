@@ -221,6 +221,123 @@
   background: var(--bg-card-hover);
 }
 
+/* Chapter 99 toggle */
+.ch99-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+  padding: 3px 6px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  transition: all 0.15s;
+}
+
+.ch99-toggle:hover {
+  border-color: var(--text-dim);
+}
+
+.ch99-toggle input {
+  accent-color: var(--dark-blue);
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+}
+
+/* Chapter 99 warning banner */
+.ch99-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0 20px;
+  padding: 8px 12px;
+  background: #fef3cd;
+  border: 1px solid #e6c656;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  color: #664d03;
+}
+
+.ch99-warning-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #e6c656;
+  color: #664d03;
+  font-weight: 700;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.ch99-warning-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ch99-warning-text strong {
+  font-weight: 600;
+  font-size: 0.72rem;
+}
+
+.ch99-warning-text span {
+  font-size: 0.68rem;
+  opacity: 0.85;
+}
+
+.ch99-probable {
+  font-style: italic;
+  color: #553c00;
+  margin-top: 2px;
+}
+
+.ch99-probable-detail {
+  margin-top: 4px;
+  border-top: 1px solid #e6c65680;
+  padding-top: 4px;
+}
+
+.ch99-probable-label {
+  font-weight: 600;
+  font-size: 0.68rem !important;
+  opacity: 1 !important;
+}
+
+.ch99-probable-list {
+  list-style: none;
+  padding: 0;
+  margin: 2px 0 0 0;
+}
+
+.ch99-probable-list li {
+  font-size: 0.66rem;
+  line-height: 1.4;
+  padding: 1px 0;
+}
+
+.ch99-probable-list .ch99-ch {
+  font-weight: 600;
+  color: #553c00;
+}
+
+.ch99-probable-list .ch99-name {
+  color: #664d03;
+}
+
+.ch99-probable-list .ch99-val {
+  color: #886600;
+  font-size: 0.62rem;
+}
+
 .loading-detail {
   padding: 20px;
   text-align: center;

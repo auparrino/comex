@@ -223,6 +223,7 @@ export default function App() {
               onBlocHighlight={setBlocHighlight}
               onSelectBloc={handleSelectBloc}
               selectedBloc={selectedBloc}
+              comtradeValidation={data.comtradeValidation}
             />
           </div>
           {selectedCountry && (

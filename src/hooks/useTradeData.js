@@ -17,6 +17,8 @@ export function useTradeData() {
   const [countrySlugs, setCountrySlugs] = useState(null);
   const [monthly, setMonthly] = useState(null);
 
+  const [comtradeValidation, setComtradeValidation] = useState(null);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -57,14 +59,16 @@ export function useTradeData() {
       fetch(`${base}/hs_descriptions.json`).then(r => r.json()),
       fetch(`${base}/country_slugs.json`).then(r => r.json()),
       fetch(`${base}/monthly.json`).then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch(`${base}/comtrade_validation.json`).then(r => r.ok ? r.json() : null).catch(() => null),
     ])
-      .then(([s, p, g, desc, slugs, m]) => {
+      .then(([s, p, g, desc, slugs, m, cv]) => {
         setSummary(s);
         setProducts(p);
         setGlobals(g);
         setNcmDescriptions(desc);
         setCountrySlugs(slugs);
         setMonthly(m);
+        setComtradeValidation(cv?.countries || null);
         setLoading(false);
       })
       .catch(err => {
@@ -137,6 +141,7 @@ export function useTradeData() {
   return {
     summary, products, chapters, globals, monthly,
     ncmDescriptions, countrySlugs, rubros,
+    comtradeValidation,
     years, countries, loading, error,
     loadCountryDetail, detailCache,
     loadProductMap,

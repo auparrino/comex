@@ -1,0 +1,1256 @@
+{
+  "metadata": {
+    "source": "local",
+    "ch99_threshold": 0.05
+  },
+  "countries": {
+    "Alemania": {
+      "ch99": {
+        "by_year": {
+          "2015": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2016": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2017": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2018": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2019": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2020": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2021": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2022": {
+            "exp_pct": 0.0006,
+            "imp_pct": 0.0,
+            "exp_val": 48346,
+            "imp_val": 0
+          },
+          "2023": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2024": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          }
+        },
+        "avg_exp_pct": 0.0001,
+        "avg_imp_pct": 0.0,
+        "max_exp_pct": 0.0006,
+        "max_imp_pct": 0.0,
+        "high": false
+      }
+    },
+    "Argentina": {
+      "ch99": {
+        "by_year": {
+          "2015": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2016": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2017": {
+            "exp_pct": 0.0002,
+            "imp_pct": 0.0,
+            "exp_val": 100451,
+            "imp_val": 0
+          },
+          "2018": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2019": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2020": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2021": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2022": {
+            "exp_pct": 0.0004,
+            "imp_pct": 0.0,
+            "exp_val": 392919,
+            "imp_val": 0
+          },
+          "2023": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2024": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0216,
+            "exp_val": 0,
+            "imp_val": 34720744
+          }
+        },
+        "avg_exp_pct": 0.0001,
+        "avg_imp_pct": 0.0022,
+        "max_exp_pct": 0.0004,
+        "max_imp_pct": 0.0216,
+        "high": false
+      }
+    },
+    "Bolivia": {
+      "ch99": {
+        "by_year": {
+          "2015": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2016": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2017": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2018": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2019": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2020": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2021": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2022": {
+            "exp_pct": 0.0008,
+            "imp_pct": 0.0,
+            "exp_val": 45484,
+            "imp_val": 0
+          },
+          "2023": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2024": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          }
+        },
+        "avg_exp_pct": 0.0001,
+        "avg_imp_pct": 0.0,
+        "max_exp_pct": 0.0008,
+        "max_imp_pct": 0.0,
+        "high": false
+      }
+    },
+    "Brasil": {
+      "ch99": {
+        "by_year": {
+          "2015": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2016": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2017": {
+            "exp_pct": 0.0001,
+            "imp_pct": 0.0,
+            "exp_val": 164114,
+            "imp_val": 0
+          },
+          "2018": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2019": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2020": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2021": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2022": {
+            "exp_pct": 0.0001,
+            "imp_pct": 0.0,
+            "exp_val": 128370,
+            "imp_val": 0
+          },
+          "2023": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2024": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          }
+        },
+        "avg_exp_pct": 0.0,
+        "avg_imp_pct": 0.0,
+        "max_exp_pct": 0.0001,
+        "max_imp_pct": 0.0,
+        "high": false
+      }
+    },
+    "Bélgica": {
+      "ch99": {
+        "by_year": {
+          "2015": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2016": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2017": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2018": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2019": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2020": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2021": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2022": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2023": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2024": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.5332,
+            "exp_val": 0,
+            "imp_val": 66372105
+          }
+        },
+        "avg_exp_pct": 0.0,
+        "avg_imp_pct": 0.0533,
+        "max_exp_pct": 0.0,
+        "max_imp_pct": 0.5332,
+        "high": true
+      },
+      "known_products": {
+        "exp": [
+          {
+            "chapter": "10",
+            "name": "CEREALES",
+            "value": 207209949
+          },
+          {
+            "chapter": "02",
+            "name": "CARNE Y DESPOJOS COMESTIBLES",
+            "value": 102860784
+          },
+          {
+            "chapter": "12",
+            "name": "SEMILLAS Y FRUTOS OLEAGINOSOS; SEMILLAS Y FRUTOS DIVERSOS; PLANTAS INDUSTRIALES O MEDICINALES; PAJA Y FORRAJE",
+            "value": 38076002
+          },
+          {
+            "chapter": "11",
+            "name": "PRODUCTOS DE LA MOLINERÍA; MALTA; ALMIDÓN Y FÉCULA; INULINA; GLUTEN DE TRIGO",
+            "value": 29461602
+          },
+          {
+            "chapter": "44",
+            "name": "MADERA, CARBÓN VEGETAL Y MANUFACTURAS DE MADERA",
+            "value": 21323616
+          }
+        ],
+        "imp": [
+          {
+            "chapter": "27",
+            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
+            "value": 95498210
+          },
+          {
+            "chapter": "84",
+            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
+            "value": 85046885
+          },
+          {
+            "chapter": "20",
+            "name": "PREPARACIONES DE HORTALIZAS, FRUTAS U OTROS FRUTOS O DEMÁS PARTES DE PLANTAS",
+            "value": 64776200
+          },
+          {
+            "chapter": "30",
+            "name": "PRODUCTOS FARMACÉUTICOS",
+            "value": 45062660
+          },
+          {
+            "chapter": "07",
+            "name": "HORTALIZAS, PLANTAS, RAÍCES Y TUBÉRCULOS ALIMENTICIOS",
+            "value": 38642665
+          }
+        ]
+      }
+    },
+    "Chile": {
+      "ch99": {
+        "by_year": {
+          "2015": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2016": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2017": {
+            "exp_pct": 0.0002,
+            "imp_pct": 0.0,
+            "exp_val": 19189,
+            "imp_val": 0
+          },
+          "2018": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2019": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2020": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2021": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2022": {
+            "exp_pct": 0.0001,
+            "imp_pct": 0.0,
+            "exp_val": 16052,
+            "imp_val": 0
+          },
+          "2023": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2024": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          }
+        },
+        "avg_exp_pct": 0.0,
+        "avg_imp_pct": 0.0,
+        "max_exp_pct": 0.0002,
+        "max_imp_pct": 0.0,
+        "high": false
+      }
+    },
+    "China": {
+      "ch99": {
+        "by_year": {
+          "2015": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2016": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2017": {
+            "exp_pct": 0.0002,
+            "imp_pct": 0.0,
+            "exp_val": 226643,
+            "imp_val": 0
+          },
+          "2018": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2019": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2020": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2021": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2022": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2023": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2024": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          }
+        },
+        "avg_exp_pct": 0.0,
+        "avg_imp_pct": 0.0,
+        "max_exp_pct": 0.0002,
+        "max_imp_pct": 0.0,
+        "high": false
+      }
+    },
+    "Colombia": {
+      "ch99": {
+        "by_year": {
+          "2015": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2016": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2017": {
+            "exp_pct": 0.0003,
+            "imp_pct": 0.0,
+            "exp_val": 7012,
+            "imp_val": 0
+          },
+          "2018": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2019": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2020": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2021": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2022": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2023": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2024": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          }
+        },
+        "avg_exp_pct": 0.0,
+        "avg_imp_pct": 0.0,
+        "max_exp_pct": 0.0003,
+        "max_imp_pct": 0.0,
+        "high": false
+      }
+    },
+    "Emiratos Árabes": {
+      "ch99": {
+        "by_year": {
+          "2015": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2016": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2017": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2018": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2019": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2020": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2021": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2022": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 1038,
+            "imp_val": 0
+          },
+          "2023": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2024": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          }
+        },
+        "avg_exp_pct": 0.0,
+        "avg_imp_pct": 0.0,
+        "max_exp_pct": 0.0,
+        "max_imp_pct": 0.0,
+        "high": false
+      }
+    },
+    "Estados Unidos": {
+      "ch99": {
+        "by_year": {
+          "2015": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2016": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2017": {
+            "exp_pct": 0.0009,
+            "imp_pct": 0.0,
+            "exp_val": 394791,
+            "imp_val": 0
+          },
+          "2018": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2019": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2020": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2021": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2022": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2023": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2024": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          }
+        },
+        "avg_exp_pct": 0.0001,
+        "avg_imp_pct": 0.0,
+        "max_exp_pct": 0.0009,
+        "max_imp_pct": 0.0,
+        "high": false
+      }
+    },
+    "Guatemala": {
+      "ch99": {
+        "by_year": {
+          "2015": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2016": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2017": {
+            "exp_pct": 0.0161,
+            "imp_pct": 0.0,
+            "exp_val": 174599,
+            "imp_val": 0
+          },
+          "2018": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2019": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2020": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2021": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2022": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2023": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2024": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          }
+        },
+        "avg_exp_pct": 0.0016,
+        "avg_imp_pct": 0.0,
+        "max_exp_pct": 0.0161,
+        "max_imp_pct": 0.0,
+        "high": false
+      }
+    },
+    "México": {
+      "ch99": {
+        "by_year": {
+          "2015": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2016": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2017": {
+            "exp_pct": 0.0003,
+            "imp_pct": 0.0,
+            "exp_val": 57621,
+            "imp_val": 0
+          },
+          "2018": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2019": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2020": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2021": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2022": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2023": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2024": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          }
+        },
+        "avg_exp_pct": 0.0,
+        "avg_imp_pct": 0.0,
+        "max_exp_pct": 0.0003,
+        "max_imp_pct": 0.0,
+        "high": false
+      }
+    },
+    "Paraguay": {
+      "ch99": {
+        "by_year": {
+          "2015": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2016": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2017": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2018": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2019": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2020": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2021": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2022": {
+            "exp_pct": 0.0006,
+            "imp_pct": 0.0,
+            "exp_val": 92768,
+            "imp_val": 0
+          },
+          "2023": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2024": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          }
+        },
+        "avg_exp_pct": 0.0001,
+        "avg_imp_pct": 0.0,
+        "max_exp_pct": 0.0006,
+        "max_imp_pct": 0.0,
+        "high": false
+      }
+    },
+    "Países Bajos": {
+      "ch99": {
+        "by_year": {
+          "2015": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2016": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2017": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2018": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2019": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2020": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2021": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2022": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2023": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2024": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.6094,
+            "exp_val": 0,
+            "imp_val": 101288591
+          }
+        },
+        "avg_exp_pct": 0.0,
+        "avg_imp_pct": 0.0609,
+        "max_exp_pct": 0.0,
+        "max_imp_pct": 0.6094,
+        "high": true
+      },
+      "known_products": {
+        "exp": [
+          {
+            "chapter": "02",
+            "name": "CARNE Y DESPOJOS COMESTIBLES",
+            "value": 1650356649
+          },
+          {
+            "chapter": "12",
+            "name": "SEMILLAS Y FRUTOS OLEAGINOSOS; SEMILLAS Y FRUTOS DIVERSOS; PLANTAS INDUSTRIALES O MEDICINALES; PAJA Y FORRAJE",
+            "value": 138679735
+          },
+          {
+            "chapter": "08",
+            "name": "FRUTAS Y FRUTOS COMESTIBLES; CORTEZAS DE AGRIOS (CÍTRICOS), MELONES O SANDÍAS",
+            "value": 108732596
+          },
+          {
+            "chapter": "10",
+            "name": "CEREALES",
+            "value": 106964118
+          },
+          {
+            "chapter": "15",
+            "name": "GRASAS Y ACEITES, ANIMALES, VEGETALES O DE ORIGEN MICROBIANO, Y PRODUCTOS DE SU DESDOBLAMIENTO; GRASAS ALIMENTICIAS ELABORADAS; CERAS DE ORIGEN ANIMAL O VEGETAL",
+            "value": 89646741
+          }
+        ],
+        "imp": [
+          {
+            "chapter": "27",
+            "name": "COMBUSTIBLES MINERALES, ACEITES MINERALES Y PRODUCTOS DE SU DESTILACIÓN; MATERIAS BITUMINOSAS; CERAS MINERALES",
+            "value": 339335327
+          },
+          {
+            "chapter": "20",
+            "name": "PREPARACIONES DE HORTALIZAS, FRUTAS U OTROS FRUTOS O DEMÁS PARTES DE PLANTAS",
+            "value": 75814932
+          },
+          {
+            "chapter": "84",
+            "name": "REACTORES NUCLEARES, CALDERAS, MÁQUINAS, APARATOS Y ARTEFACTOS MECÁNICOS; PARTES DE ESTAS MÁQUINAS O APARATOS",
+            "value": 70620729
+          },
+          {
+            "chapter": "85",
+            "name": "MÁQUINAS, APARATOS Y MATERIAL ELÉCTRICO, Y SUS PARTES; APARATOS DE GRABACIÓN O REPRODUCCIÓN DE SONIDO, APARATOS DE GRABACIÓN O REPRODUCCIÓN DE IMAGEN Y SONIDO EN TELEVISIÓN, Y LAS PARTES Y ACCESORIOS DE ESTOS APARATOS",
+            "value": 48908472
+          },
+          {
+            "chapter": "30",
+            "name": "PRODUCTOS FARMACÉUTICOS",
+            "value": 41410073
+          }
+        ]
+      }
+    },
+    "Venezuela": {
+      "ch99": {
+        "by_year": {
+          "2015": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2016": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2017": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2018": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2019": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2020": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2021": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2022": {
+            "exp_pct": 0.0005,
+            "imp_pct": 0.0,
+            "exp_val": 31717,
+            "imp_val": 0
+          },
+          "2023": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2024": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          }
+        },
+        "avg_exp_pct": 0.0,
+        "avg_imp_pct": 0.0,
+        "max_exp_pct": 0.0005,
+        "max_imp_pct": 0.0,
+        "high": false
+      }
+    },
+    "Vietnam": {
+      "ch99": {
+        "by_year": {
+          "2015": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2016": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2017": {
+            "exp_pct": 0.0006,
+            "imp_pct": 0.0,
+            "exp_val": 19131,
+            "imp_val": 0
+          },
+          "2018": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2019": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2020": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2021": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2022": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2023": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          },
+          "2024": {
+            "exp_pct": 0.0,
+            "imp_pct": 0.0,
+            "exp_val": 0,
+            "imp_val": 0
+          }
+        },
+        "avg_exp_pct": 0.0001,
+        "avg_imp_pct": 0.0,
+        "max_exp_pct": 0.0006,
+        "max_imp_pct": 0.0,
+        "high": false
+      }
+    }
+  }
+}

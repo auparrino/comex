@@ -19,7 +19,7 @@ REPORTERS = {
     "pry": 600,
 }
 
-YEARS = list(range(2018, 2025))  # 2018-2024
+YEARS = list(range(2015, 2026))  # 2015-2025
 FLOWS = {"M": "imports", "X": "exports"}
 
 SCRIPT_DIR = Path(__file__).parent

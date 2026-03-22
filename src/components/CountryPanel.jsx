@@ -26,6 +26,7 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
   const [productView, setProductView] = useState('chapters');
   const [detailData, setDetailData] = useState(null);
   const [detailLoading, setDetailLoading] = useState(false);
+  const [include9999, setInclude9999] = useState(true);
 
   // Load detail data when country changes or digit level > 2
   useEffect(() => {
@@ -69,6 +70,36 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
       selectedYears
     );
   }, [detailData, data.ncmDescriptions, selectedYears, digitLevel]);
+
+  // Chapter 99 (NCM 9999) statistics
+  const ch99Stats = useMemo(() => {
+    if (!productData) return null;
+    const is99 = (p) => p.chapter.startsWith('99');
+    const expTotal = productData.exp.reduce((s, p) => s + p.value, 0);
+    const impTotal = productData.imp.reduce((s, p) => s + p.value, 0);
+    const exp99 = productData.exp.filter(is99).reduce((s, p) => s + p.value, 0);
+    const imp99 = productData.imp.filter(is99).reduce((s, p) => s + p.value, 0);
+    return {
+      expPct: expTotal > 0 ? exp99 / expTotal : 0,
+      impPct: impTotal > 0 ? imp99 / impTotal : 0,
+      expVal: exp99,
+      impVal: imp99,
+      high: (expTotal > 0 && exp99 / expTotal > 0.05) || (impTotal > 0 && imp99 / impTotal > 0.05),
+    };
+  }, [productData]);
+
+  // Filtered product data (exclude ch99 when toggled off)
+  const filteredProductData = useMemo(() => {
+    if (include9999 || !productData) return productData;
+    const not99 = (p) => !p.chapter.startsWith('99');
+    return {
+      exp: productData.exp.filter(not99),
+      imp: productData.imp.filter(not99),
+    };
+  }, [productData, include9999]);
+
+  // Comtrade validation data for this country
+  const validationData = data.comtradeValidation?.[country] || null;
 
   // Rubros aggregation (only at 2-digit level)
   const rubrosData = useMemo(() => {
@@ -193,6 +224,15 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
             </button>
           </div>
 
+          <label className="ch99-toggle" title="Incluir cap. 99 (Transacciones especiales / NCM 9999)">
+            <input
+              type="checkbox"
+              checked={include9999}
+              onChange={(e) => setInclude9999(e.target.checked)}
+            />
+            <span>9999</span>
+          </label>
+
           {activeTab === 'products' && (
             <div className="digit-selector">
               <div className="view-toggle-panel">
@@ -223,6 +263,43 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
         </div>
       )}
 
+      {/* Chapter 99 warning banner */}
+      {activeTab === 'products' && ch99Stats && ch99Stats.high && (
+        <div className="ch99-warning">
+          <span className="ch99-warning-icon">!</span>
+          <div className="ch99-warning-text">
+            <strong>Alto % datos confidenciales (NCM 9999)</strong>
+            <span>
+              {ch99Stats.expPct > 0.01 && `Exp: ${(ch99Stats.expPct * 100).toFixed(1)}% (${fmt(ch99Stats.expVal)})`}
+              {ch99Stats.expPct > 0.01 && ch99Stats.impPct > 0.01 && ' · '}
+              {ch99Stats.impPct > 0.01 && `Imp: ${(ch99Stats.impPct * 100).toFixed(1)}% (${fmt(ch99Stats.impVal)})`}
+            </span>
+            {validationData?.probable_products && (() => {
+              const flow = ch99Stats.expPct >= ch99Stats.impPct ? 'exp' : 'imp';
+              const prods = validationData.probable_products[flow];
+              if (!prods || prods.length === 0) return null;
+              return (
+                <div className="ch99-probable-detail">
+                  <span className="ch99-probable-label">Prob. según Comtrade:</span>
+                  <ul className="ch99-probable-list">
+                    {prods.slice(0, 4).map(p => (
+                      <li key={p.chapter}>
+                        <span className="ch99-ch">Cap. {p.chapter}</span>
+                        {' '}
+                        <span className="ch99-name">{p.name.length > 60 ? p.name.slice(0, 57) + '...' : p.name}</span>
+                        {p.ct_value > 0 && (
+                          <span className="ch99-val"> ({fmt(p.ct_value)})</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })()}
+          </div>
+        </div>
+      )}
+
       {/* Content */}
       <div className="panel-content">
         {activeTab === 'bilateral' ? (
@@ -238,7 +315,7 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
               <div className="loading-detail">Cargando detalle...</div>
             ) : (
               <ProductChart
-                data={productView === 'rubros' ? rubrosData : productData}
+                data={productView === 'rubros' ? rubrosData : filteredProductData}
                 flowFilter={flowFilter}
                 total={{ exp: totalExp, imp: totalImp }}
                 digitLevel={digitLevel}
