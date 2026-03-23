@@ -1,8 +1,12 @@
-import { useCallback, useMemo } from 'react';
+import { useState, useCallback } from 'react';
 import './YearRangeSelector.css';
 
 /**
- * Year range selector with dual-handle slider.
+ * Year range selector with clickable year pills.
+ * - Click a year to select it (single year)
+ * - Click a second year to extend range to it
+ * - Click "Todos" to reset
+ *
  * Props:
  *   years: string[] - available years
  *   from: string - start year of range
@@ -10,28 +14,24 @@ import './YearRangeSelector.css';
  *   onChange: (from, to) => void
  */
 export default function YearRangeSelector({ years, from, to, onChange }) {
+  const [pendingStart, setPendingStart] = useState(null);
+
   const isAll = from === years[0] && to === years[years.length - 1];
-  const fromIdx = years.indexOf(from);
-  const toIdx = years.indexOf(to);
-  const max = years.length - 1;
 
-  // Percentage for track fill
-  const fillLeft = useMemo(() => (fromIdx / max) * 100, [fromIdx, max]);
-  const fillRight = useMemo(() => ((max - toIdx) / max) * 100, [toIdx, max]);
-
-  const handleFromChange = useCallback((e) => {
-    const idx = parseInt(e.target.value);
-    const clampedIdx = Math.min(idx, toIdx);
-    onChange(years[clampedIdx], years[toIdx]);
-  }, [years, toIdx, onChange]);
-
-  const handleToChange = useCallback((e) => {
-    const idx = parseInt(e.target.value);
-    const clampedIdx = Math.max(idx, fromIdx);
-    onChange(years[fromIdx], years[clampedIdx]);
-  }, [years, fromIdx, onChange]);
+  const handleYearClick = useCallback((year) => {
+    if (pendingStart === null) {
+      setPendingStart(year);
+      onChange(year, year);
+    } else {
+      const start = year < pendingStart ? year : pendingStart;
+      const end = year > pendingStart ? year : pendingStart;
+      onChange(start, end);
+      setPendingStart(null);
+    }
+  }, [pendingStart, onChange]);
 
   const handleAllClick = useCallback(() => {
+    setPendingStart(null);
     onChange(years[0], years[years.length - 1]);
   }, [years, onChange]);
 
@@ -43,39 +43,22 @@ export default function YearRangeSelector({ years, from, to, onChange }) {
       >
         Todos
       </button>
-      <div className="yr-slider-wrap">
-        <div className="yr-slider-track">
-          <div
-            className="yr-slider-fill"
-            style={{ left: `${fillLeft}%`, right: `${fillRight}%` }}
-          />
-          <input
-            type="range"
-            className="yr-slider yr-slider-from"
-            min={0}
-            max={max}
-            value={fromIdx}
-            onChange={handleFromChange}
-          />
-          <input
-            type="range"
-            className="yr-slider yr-slider-to"
-            min={0}
-            max={max}
-            value={toIdx}
-            onChange={handleToChange}
-          />
-        </div>
-        <div className="yr-ticks">
-          {years.map((y, i) => (
-            <span
+      <div className="yr-bars">
+        {years.map(y => {
+          const inRange = y >= from && y <= to;
+          const isEdge = y === from || y === to;
+          const isPending = y === pendingStart;
+          return (
+            <button
               key={y}
-              className={`yr-tick ${i >= fromIdx && i <= toIdx ? 'in-range' : ''}`}
+              className={`yr-bar ${inRange ? 'in-range' : ''} ${isEdge ? 'edge' : ''} ${isPending ? 'pending' : ''}`}
+              onClick={() => handleYearClick(y)}
+              title={y}
             >
-              {y.slice(-2)}
-            </span>
-          ))}
-        </div>
+              <span className="yr-label">{y.slice(-2)}</span>
+            </button>
+          );
+        })}
       </div>
       {!isAll && (
         <span className="yr-range-label">
