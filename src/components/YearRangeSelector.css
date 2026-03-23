@@ -90,6 +90,12 @@
   color: var(--text-dim);
   font-weight: 500;
   white-space: nowrap;
+  min-width: 58px;
+  text-align: center;
+}
+
+.yr-range-label.hidden {
+  visibility: hidden;
 }
 
 @media (max-width: 768px) {

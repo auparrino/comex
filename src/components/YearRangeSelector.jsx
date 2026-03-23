@@ -60,11 +60,9 @@ export default function YearRangeSelector({ years, from, to, onChange }) {
           );
         })}
       </div>
-      {!isAll && (
-        <span className="yr-range-label">
-          {from === to ? from : `${from}-${to}`}
-        </span>
-      )}
+      <span className={`yr-range-label ${isAll ? 'hidden' : ''}`}>
+        {isAll ? '\u00A0' : from === to ? from : `${from}-${to}`}
+      </span>
     </div>
   );
 }
