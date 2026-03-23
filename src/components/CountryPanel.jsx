@@ -55,11 +55,6 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
       .reduce((s, y) => s + y.imp, 0);
   }, [yearlyData, selectedYears]);
 
-  // Adjust totals when ch99 is excluded
-  const displayExp = include9999 ? totalExp : totalExp - (ch99Stats?.expVal || 0);
-  const displayImp = include9999 ? totalImp : totalImp - (ch99Stats?.impVal || 0);
-  const balance = displayExp - displayImp;
-
   // Products at the selected digit level
   const productData = useMemo(() => {
     if (!detailData) return { exp: [], imp: [] };
@@ -90,6 +85,11 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
       high: (expTotal > 0 && exp99 / expTotal > 0.20) || (impTotal > 0 && imp99 / impTotal > 0.20),
     };
   }, [productData]);
+
+  // Adjust totals when ch99 is excluded
+  const displayExp = include9999 ? totalExp : totalExp - (ch99Stats?.expVal || 0);
+  const displayImp = include9999 ? totalImp : totalImp - (ch99Stats?.impVal || 0);
+  const balance = displayExp - displayImp;
 
   // Filtered product data (exclude ch99 when toggled off)
   const filteredProductData = useMemo(() => {
