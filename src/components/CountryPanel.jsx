@@ -296,7 +296,7 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
               if (sorted.length === 0) return null;
               return (
                 <div className="ch99-probable-detail">
-                  <span className="ch99-probable-label">Prob. según Comtrade:</span>
+                  <span className="ch99-probable-label">Principales capítulos según Comtrade (los conf. prob. pertenecen a estos):</span>
                   <ul className="ch99-probable-list">
                     {sorted.map(([ch, val]) => (
                       <li key={ch}>
