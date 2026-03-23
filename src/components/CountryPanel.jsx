@@ -277,21 +277,34 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
               {ch99Stats.expPct > 0.01 && ch99Stats.impPct > 0.01 && ' · '}
               {ch99Stats.impPct > 0.01 && `Imp: ${(ch99Stats.impPct * 100).toFixed(1)}% (${fmt(ch99Stats.impVal)})`}
             </span>
-            {validationData?.probable_products && (() => {
+            {validationData?.probable_products_by_year && (() => {
               const flow = ch99Stats.expPct >= ch99Stats.impPct ? 'exp' : 'imp';
-              const prods = validationData.probable_products[flow];
-              if (!prods || prods.length === 0) return null;
+              // Aggregate CT chapter values across selected years
+              const chTotals = {};
+              let chNames = {};
+              for (const y of selectedYears) {
+                const yearData = validationData.probable_products_by_year[y];
+                if (!yearData || !yearData[flow]) continue;
+                for (const p of yearData[flow]) {
+                  chTotals[p.chapter] = (chTotals[p.chapter] || 0) + p.ct_value;
+                  chNames[p.chapter] = p.name;
+                }
+              }
+              const sorted = Object.entries(chTotals)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 4);
+              if (sorted.length === 0) return null;
               return (
                 <div className="ch99-probable-detail">
-                  <span className="ch99-probable-label">Prob. según Comtrade (acum. 2018-2024):</span>
+                  <span className="ch99-probable-label">Prob. según Comtrade:</span>
                   <ul className="ch99-probable-list">
-                    {prods.slice(0, 4).map(p => (
-                      <li key={p.chapter}>
-                        <span className="ch99-ch">Cap. {p.chapter}</span>
+                    {sorted.map(([ch, val]) => (
+                      <li key={ch}>
+                        <span className="ch99-ch">Cap. {ch}</span>
                         {' '}
-                        <span className="ch99-name">{p.name.length > 60 ? p.name.slice(0, 57) + '...' : p.name}</span>
-                        {p.ct_value > 0 && (
-                          <span className="ch99-val"> ({fmt(p.ct_value)})</span>
+                        <span className="ch99-name">{(chNames[ch] || '').length > 60 ? chNames[ch].slice(0, 57) + '...' : chNames[ch]}</span>
+                        {val > 0 && (
+                          <span className="ch99-val"> ({fmt(val)})</span>
                         )}
                       </li>
                     ))}

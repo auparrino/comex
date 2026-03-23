@@ -50,8 +50,8 @@ def load_comtrade_totals(partner_ref):
     """Load Comtrade totals for Argentina (reporter=32) from cache.
     Returns (totals_by_year, chapters_by_partner)."""
     ct = defaultdict(lambda: defaultdict(lambda: {"exp": 0, "imp": 0}))
-    # Also capture chapter-level data: ct_ch[country][(chapter, flow)] = total
-    ct_ch = defaultdict(lambda: defaultdict(float))
+    # Also capture chapter-level data: ct_ch[country][year][(chapter, flow)] = value
+    ct_ch = defaultdict(lambda: defaultdict(lambda: defaultdict(float)))
 
     # First, find which years have chapter-level files vs AG6
     chapter_year_flows = set()
@@ -88,7 +88,7 @@ def load_comtrade_totals(partner_ref):
             ct[canonical][year][fk] += val
             cmd = str(rec.get("cmdCode", ""))
             if len(cmd) == 2 and not cmd.startswith("99"):
-                ct_ch[canonical][(cmd, fk)] += val
+                ct_ch[canonical][year][(cmd, fk)] += val
 
     # Process AG6 files for years without chapter files
     for f in ag6_files:
@@ -114,7 +114,7 @@ def load_comtrade_totals(partner_ref):
             cmd = str(rec.get("cmdCode", ""))
             ch = cmd[:2] if len(cmd) >= 2 else cmd
             if len(ch) == 2 and ch.isdigit() and not ch.startswith("99"):
-                ct_ch[canonical][(ch, fk)] += val
+                ct_ch[canonical][year][(ch, fk)] += val
 
     return ct, ct_ch
 
@@ -239,45 +239,40 @@ def main():
             if severity == "high":
                 high_count += 1
 
-        # Compute probable_products for high ch99 countries
-        # Strategy: show top Comtrade chapters for this country.
-        # These are what Argentina actually trades (per Comtrade), so the
-        # confidential 9999 codes likely belong to these chapters.
+        # Compute probable_products for high ch99 countries, per year
+        # Store per-year CT chapter data so UI can filter by selectedYears
         is_ch99_high = entry.get("ch99", {}).get("high", False)
         if is_ch99_high and country in ct_chapters and country in products:
-            ch99_exp = sum(
-                products[country].get(y, {}).get("exp", {}).get("99", 0)
-                for y in years_available
-            )
-            ch99_imp = sum(
-                products[country].get(y, {}).get("imp", {}).get("99", 0)
-                for y in years_available
-            )
+            probable_by_year = {}
+            for y in years_available:
+                ch99_exp_y = products[country].get(y, {}).get("exp", {}).get("99", 0)
+                ch99_imp_y = products[country].get(y, {}).get("imp", {}).get("99", 0)
 
-            # Top CT chapters by value for each flow
-            ct_by_flow = defaultdict(list)
-            for (ch, fk), ct_val in ct_chapters[country].items():
-                ct_by_flow[fk].append((ch, ct_val))
-
-            probable = {}
-            for fk in ["exp", "imp"]:
-                ch99_total = ch99_exp if fk == "exp" else ch99_imp
-                if ch99_total < 100000:
+                if ch99_exp_y < 50000 and ch99_imp_y < 50000:
                     continue
-                top = sorted(ct_by_flow[fk], key=lambda x: -x[1])[:5]
-                if top:
-                    probable[fk] = [
-                        {
-                            "chapter": ch,
-                            "name": chapters.get(ch, f"Cap. {ch}"),
-                            "ct_value": round(val),
-                        }
-                        for ch, val in top
-                    ]
 
-            if probable:
-                entry["probable_products"] = probable
-                entry["ch99_totals"] = {"exp": round(ch99_exp), "imp": round(ch99_imp)}
+                year_ct = ct_chapters[country].get(y, {})
+                if not year_ct:
+                    continue
+
+                year_probable = {}
+                for fk in ["exp", "imp"]:
+                    ch99_val = ch99_exp_y if fk == "exp" else ch99_imp_y
+                    if ch99_val < 50000:
+                        continue
+                    ct_by_ch = [(ch, val) for (ch, f), val in year_ct.items() if f == fk]
+                    top = sorted(ct_by_ch, key=lambda x: -x[1])[:5]
+                    if top:
+                        year_probable[fk] = [
+                            {"chapter": ch, "name": chapters.get(ch, f"Cap. {ch}"), "ct_value": round(val)}
+                            for ch, val in top
+                        ]
+
+                if year_probable:
+                    probable_by_year[y] = year_probable
+
+            if probable_by_year:
+                entry["probable_products_by_year"] = probable_by_year
 
         if entry:
             validation["countries"][country] = entry
