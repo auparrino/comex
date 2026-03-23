@@ -283,7 +283,7 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
               if (!prods || prods.length === 0) return null;
               return (
                 <div className="ch99-probable-detail">
-                  <span className="ch99-probable-label">Prob. según Comtrade:</span>
+                  <span className="ch99-probable-label">Prob. según Comtrade (acum. 2018-2024):</span>
                   <ul className="ch99-probable-list">
                     {prods.slice(0, 4).map(p => (
                       <li key={p.chapter}>
