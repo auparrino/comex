@@ -279,7 +279,6 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
             </span>
             {validationData?.probable_products_by_year && (() => {
               const flow = ch99Stats.expPct >= ch99Stats.impPct ? 'exp' : 'imp';
-              // Aggregate CT chapter values across selected years
               const chTotals = {};
               let chNames = {};
               for (const y of selectedYears) {
@@ -296,16 +295,13 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
               if (sorted.length === 0) return null;
               return (
                 <div className="ch99-probable-detail">
-                  <span className="ch99-probable-label">Principales capítulos según Comtrade (los conf. prob. pertenecen a estos):</span>
+                  <span className="ch99-probable-label">Probablemente:</span>
                   <ul className="ch99-probable-list">
-                    {sorted.map(([ch, val]) => (
+                    {sorted.map(([ch]) => (
                       <li key={ch}>
                         <span className="ch99-ch">Cap. {ch}</span>
                         {' '}
-                        <span className="ch99-name">{(chNames[ch] || '').length > 60 ? chNames[ch].slice(0, 57) + '...' : chNames[ch]}</span>
-                        {val > 0 && (
-                          <span className="ch99-val"> ({fmt(val)})</span>
-                        )}
+                        <span className="ch99-name">{(chNames[ch] || '').length > 55 ? chNames[ch].slice(0, 52) + '...' : chNames[ch]}</span>
                       </li>
                     ))}
                   </ul>
