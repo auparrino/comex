@@ -10,7 +10,7 @@ import { fmt, MONTHS } from '../utils/format';
 import ProductChart from './ProductChart';
 import MonthlyChart from './MonthlyChart';
 import TradeTimeline from './TradeTimeline';
-import BilateralAnalysis from './BilateralAnalysis';
+import AiAnalysis from './AiAnalysis';
 import './CountryPanel.css';
 
 const DIGIT_OPTIONS = [
@@ -159,7 +159,7 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
               : selectedYears[0]}
           </p>
         </div>
-        <button className="close-btn" onClick={onClose}>&times;</button>
+        <button className="close-btn" onClick={onClose} aria-label="Cerrar panel">&times;</button>
       </div>
 
       {/* KPIs */}
@@ -193,14 +193,12 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
         >
           Productos
         </button>
-        {data.loadBilateralData && (
-          <button
-            className={activeTab === 'bilateral' ? 'active' : ''}
-            onClick={() => setActiveTab('bilateral')}
-          >
-            Bilateral
-          </button>
-        )}
+        <button
+          className={activeTab === 'ai' ? 'active' : ''}
+          onClick={() => setActiveTab('ai')}
+        >
+          Analisis IA
+        </button>
       </div>
 
       {/* Flow filter + digit selector (only on products tab) */}
@@ -314,11 +312,10 @@ export default function CountryPanel({ country, data, selectedYear, selectedYear
 
       {/* Content */}
       <div className="panel-content">
-        {activeTab === 'bilateral' ? (
-          <BilateralAnalysis
+        {activeTab === 'ai' ? (
+          <AiAnalysis
             country={country}
             data={data}
-            years={data.years}
             selectedYears={selectedYears}
           />
         ) : (

@@ -8,4 +8,15 @@ export default defineConfig({
   server: {
     port: 5173,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          d3: ['d3'],
+          topojson: ['topojson-client'],
+        },
+      },
+    },
+    sourcemap: true,
+  },
 })

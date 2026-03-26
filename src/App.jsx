@@ -80,20 +80,21 @@ export default function App() {
             }
           }
           setProductMapData(Object.keys(merged).length > 0 ? merged : null);
-        });
+        })
+        .catch(() => setProductMapData(null));
     } else if (selectedProduct.length === 2) {
       // Chapter (2-digit): load single chapter, aggregate all HS6
       data.loadProductMap(selectedProduct).then(chapterData => {
         if (!chapterData) { setProductMapData(null); return; }
         setProductMapData(aggregate(chapterData, null));
-      });
+      }).catch(() => setProductMapData(null));
     } else if (selectedProduct.length === 4) {
       // Heading (4-digit): load chapter, aggregate HS6 starting with this heading
       const chapter = selectedProduct.slice(0, 2);
       data.loadProductMap(chapter).then(chapterData => {
         if (!chapterData) { setProductMapData(null); return; }
         setProductMapData(aggregate(chapterData, hs6 => hs6.startsWith(selectedProduct)));
-      });
+      }).catch(() => setProductMapData(null));
     } else {
       // HS6 (6-digit): load chapter, get specific code
       const chapter = selectedProduct.slice(0, 2);
@@ -103,7 +104,7 @@ export default function App() {
         } else {
           setProductMapData(null);
         }
-      });
+      }).catch(() => setProductMapData(null));
     }
   }, [selectedProduct, data.loadProductMap, data.rubros]);
 
@@ -248,7 +249,7 @@ export default function App() {
             <div className="analysis-panel">
               <div className="panel-header">
                 <h2>Resumen Global - {reporterName}</h2>
-                <button className="close-btn" onClick={() => setShowAnalysis(false)}>&times;</button>
+                <button className="close-btn" onClick={() => setShowAnalysis(false)} aria-label="Cerrar resumen">&times;</button>
               </div>
               <div className="analysis-panel-content">
                 <GlobalOverview data={data} selectedYear={selectedYear} selectedYears={selectedYears} />

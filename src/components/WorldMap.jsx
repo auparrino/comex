@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useMemo } from 'react';
+import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 import { getCountryCoords } from '../utils/countryCoords';
@@ -7,6 +7,9 @@ import { fmt } from '../utils/format';
 import './WorldMap.css';
 
 const EMPTY_SET = new Set();
+
+// Module-level cache for world topology (survives remounts)
+let worldDataCache = null;
 
 function getCountryTotals(summary, selectedYears) {
   const result = {};
@@ -24,6 +27,60 @@ function getCountryTotals(summary, selectedYears) {
   return result;
 }
 
+// Escape HTML to prevent XSS
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+// ISO 3166-1 numeric -> ISO2 mapping (common countries)
+const ISO_NUM_MAP = {
+  'AF': '4', 'AL': '8', 'DZ': '12', 'AS': '16', 'AD': '20', 'AO': '24',
+  'AG': '28', 'AR': '32', 'AM': '51', 'AU': '36', 'AT': '40', 'AZ': '31',
+  'BS': '44', 'BH': '48', 'BD': '50', 'BB': '52', 'BY': '112', 'BE': '56',
+  'BZ': '84', 'BJ': '204', 'BT': '64', 'BO': '68', 'BA': '70', 'BW': '72',
+  'BR': '76', 'BN': '96', 'BG': '100', 'BF': '854', 'BI': '108',
+  'KH': '116', 'CM': '120', 'CA': '124', 'CV': '132', 'CF': '140',
+  'TD': '148', 'CL': '152', 'CN': '156', 'CO': '170', 'KM': '174',
+  'CG': '178', 'CD': '180', 'CR': '188', 'CI': '384', 'HR': '191',
+  'CU': '192', 'CY': '196', 'CZ': '203', 'DK': '208', 'DJ': '262',
+  'DM': '212', 'DO': '214', 'EC': '218', 'EG': '818', 'SV': '222',
+  'GQ': '226', 'ER': '232', 'EE': '233', 'ET': '231', 'FJ': '242',
+  'FI': '246', 'FR': '250', 'GA': '266', 'GM': '270', 'GE': '268',
+  'DE': '276', 'GH': '288', 'GR': '300', 'GD': '308', 'GT': '320',
+  'GN': '324', 'GW': '624', 'GY': '328', 'HT': '332', 'HN': '340',
+  'HU': '348', 'IS': '352', 'IN': '356', 'ID': '360', 'IR': '364',
+  'IQ': '368', 'IE': '372', 'IL': '376', 'IT': '380', 'JM': '388',
+  'JP': '392', 'JO': '400', 'KZ': '398', 'KE': '404', 'KI': '296',
+  'KP': '408', 'KR': '410', 'KW': '414', 'KG': '417', 'LA': '418',
+  'LV': '428', 'LB': '422', 'LS': '426', 'LR': '430', 'LY': '434',
+  'LI': '438', 'LT': '440', 'LU': '442', 'MK': '807', 'MG': '450',
+  'MW': '454', 'MY': '458', 'MV': '462', 'ML': '466', 'MT': '470',
+  'MR': '478', 'MU': '480', 'MX': '484', 'MD': '498', 'MC': '492',
+  'MN': '496', 'ME': '499', 'MA': '504', 'MZ': '508', 'MM': '104',
+  'NA': '516', 'NP': '524', 'NL': '528', 'NZ': '554', 'NI': '558',
+  'NE': '562', 'NG': '566', 'NO': '578', 'OM': '512', 'PK': '586',
+  'PA': '591', 'PG': '598', 'PY': '600', 'PE': '604', 'PH': '608',
+  'PL': '616', 'PT': '620', 'QA': '634', 'RO': '642', 'RU': '643',
+  'RW': '646', 'SA': '682', 'SN': '686', 'RS': '688', 'SL': '694',
+  'SG': '702', 'SK': '703', 'SI': '705', 'SB': '90', 'SO': '706',
+  'ZA': '710', 'SS': '728', 'ES': '724', 'LK': '144', 'SD': '729',
+  'SR': '740', 'SZ': '748', 'SE': '752', 'CH': '756', 'SY': '760',
+  'TW': '158', 'TJ': '762', 'TZ': '834', 'TH': '764', 'TL': '626',
+  'TG': '768', 'TT': '780', 'TN': '788', 'TR': '792', 'TM': '795',
+  'UG': '800', 'UA': '804', 'AE': '784', 'GB': '826', 'US': '840',
+  'UY': '858', 'UZ': '860', 'VU': '548', 'VE': '862', 'VN': '704',
+  'YE': '887', 'ZM': '894', 'ZW': '716',
+  'XK': '-99', 'PS': '275', 'EH': '732',
+};
+
+// Pre-build reverse map: numericId (int) -> iso2
+const NUM_TO_ISO2 = {};
+for (const [iso2, numStr] of Object.entries(ISO_NUM_MAP)) {
+  NUM_TO_ISO2[parseInt(numStr, 10)] = iso2;
+}
+
 export default function WorldMap({
   data,
   selectedYear,
@@ -38,15 +95,16 @@ export default function WorldMap({
   blocHighlight = blocHighlight || EMPTY_SET;
   const svgRef = useRef();
   const tooltipRef = useRef();
-  const [worldData, setWorldData] = useState(null);
-  const [hoveredCountry, setHoveredCountry] = useState(null);
+  const zoomTransformRef = useRef(d3.zoomIdentity);
+  const zoomBehaviorRef = useRef(null);
+  const [worldData, setWorldData] = useState(worldDataCache);
+  const [containerWidth, setContainerWidth] = useState(0);
 
   const countryTotals = useMemo(
     () => getCountryTotals(data.summary, selectedYears),
     [data.summary, selectedYears]
   );
 
-  // When a product is selected, use product map data for coloring
   const effectiveTotals = useMemo(() => {
     if (selectedProduct && productMapData) {
       const result = {};
@@ -67,33 +125,56 @@ export default function WorldMap({
     return countryTotals;
   }, [countryTotals, selectedProduct, productMapData, data.summary]);
 
-  // Build ISO2 -> country name mapping
   const isoToName = useMemo(() => {
     const map = {};
-    const source = selectedProduct && productMapData ? { ...data.summary } : data.summary;
-    for (const [name, d] of Object.entries(source)) {
+    for (const [name, d] of Object.entries(data.summary)) {
       if (!d.iso2) continue;
       if (name.includes('(') && map[d.iso2]) continue;
       map[d.iso2] = name;
     }
     return map;
-  }, [data.summary, selectedProduct, productMapData]);
+  }, [data.summary]);
 
-  // Hub coordinates (reporter's position)
+  // O(1) lookup: numericId -> country name
+  const numIdToName = useMemo(() => {
+    const map = {};
+    for (const [iso2, name] of Object.entries(isoToName)) {
+      const numId = parseInt(ISO_NUM_MAP[iso2], 10);
+      if (!isNaN(numId)) map[numId] = name;
+    }
+    return map;
+  }, [isoToName]);
+
   const hubCoords = reporterCoords || [-34.6, -58.4];
 
+  // ResizeObserver
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/world-110m.json`)
-      .then(r => r.json())
-      .then(setWorldData);
+    const container = svgRef.current?.parentElement;
+    if (!container) return;
+    const ro = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        setContainerWidth(entry.contentRect.width);
+      }
+    });
+    ro.observe(container);
+    setContainerWidth(container.clientWidth);
+    return () => ro.disconnect();
   }, []);
 
+  // Fetch world topology once (with module-level cache)
   useEffect(() => {
-    if (!worldData || !svgRef.current) return;
+    if (worldDataCache) { setWorldData(worldDataCache); return; }
+    fetch(`${import.meta.env.BASE_URL}data/world-110m.json`)
+      .then(r => r.json())
+      .then(d => { worldDataCache = d; setWorldData(d); });
+  }, []);
+
+  // Main render effect
+  useEffect(() => {
+    if (!worldData || !svgRef.current || !containerWidth) return;
 
     const svg = d3.select(svgRef.current);
-    const container = svgRef.current.parentElement;
-    const width = container.clientWidth;
+    const width = containerWidth;
     const height = Math.min(width * 0.55, window.innerHeight - 200);
 
     svg.attr('viewBox', `0 0 ${width} ${height}`);
@@ -122,24 +203,30 @@ export default function WorldMap({
     const colorScale = d3.scaleSqrt().domain([0, maxTrade]).range([0, 1]);
 
     const zoomG = svg.append('g');
-    const g = zoomG;
 
     const zoom = d3.zoom()
       .scaleExtent([1, 8])
       .on('zoom', (event) => {
         zoomG.attr('transform', event.transform);
+        zoomTransformRef.current = event.transform;
       });
 
+    zoomBehaviorRef.current = zoom;
     svg.call(zoom);
 
-    // Draw countries
-    g.selectAll('path.country')
+    // Restore previous zoom transform
+    if (zoomTransformRef.current !== d3.zoomIdentity) {
+      svg.call(zoom.transform, zoomTransformRef.current);
+    }
+
+    // Draw countries — use O(1) numIdToName lookup
+    zoomG.selectAll('path.country')
       .data(countries.features)
       .join('path')
       .attr('class', 'country')
       .attr('d', path)
       .attr('fill', d => {
-        const name = findCountryName(d.id, isoToName);
+        const name = numIdToName[parseInt(d.id, 10)];
 
         if (name && totals[name]) {
           const t = totals[name];
@@ -150,15 +237,13 @@ export default function WorldMap({
             return d3.interpolate('#e8dcc0', COLORS.imports)(intensity);
           }
         }
-        // Country has general trade but 0 for selected product → visible neutral
         if (selectedProduct && name && countryTotals[name]) {
           return '#e8dcc0';
         }
-        // No trade at all → match background (invisible)
         return '#FDF0D5';
       })
       .attr('stroke', function(d) {
-        const name = findCountryName(d.id, isoToName);
+        const name = numIdToName[parseInt(d.id, 10)];
         if (name && name === selectedCountry) return COLORS.highlight;
         if (blocHighlight && blocHighlight.size > 0 && name && blocHighlight.has(name))
           return COLORS.highlight;
@@ -167,7 +252,7 @@ export default function WorldMap({
         return fill;
       })
       .attr('stroke-width', function(d) {
-        const name = findCountryName(d.id, isoToName);
+        const name = numIdToName[parseInt(d.id, 10)];
         if (name && name === selectedCountry) return 2;
         if (blocHighlight && blocHighlight.size > 0 && name && blocHighlight.has(name))
           return 1.5;
@@ -177,22 +262,21 @@ export default function WorldMap({
       })
       .style('cursor', 'pointer')
       .on('click', (event, d) => {
-        const name = findCountryName(d.id, isoToName);
+        const name = numIdToName[parseInt(d.id, 10)];
         if (name && totals[name]) {
           onSelectCountry(name);
         }
       })
       .on('mouseenter', (event, d) => {
-        const name = findCountryName(d.id, isoToName);
+        const name = numIdToName[parseInt(d.id, 10)];
         if (name && totals[name]) {
-          setHoveredCountry(name);
           const tooltip = tooltipRef.current;
           if (tooltip) {
             const t = totals[name];
-            const productLabel = selectedProduct ? ` (${selectedProduct})` : '';
+            const productLabel = selectedProduct ? ` (${escapeHtml(selectedProduct)})` : '';
             tooltip.style.display = 'block';
             tooltip.innerHTML = `
-              <strong>${name}${productLabel}</strong>
+              <strong>${escapeHtml(name)}${productLabel}</strong>
               <div class="tt-row"><span class="tt-exp">Exp FOB:</span> ${fmt(t.exp)}</div>
               <div class="tt-row"><span class="tt-imp">Imp CIF:</span> ${fmt(t.imp)}</div>
               <div class="tt-row"><span class="tt-bal">Balance:</span> ${fmt(t.balance)}</div>
@@ -203,13 +287,13 @@ export default function WorldMap({
       .on('mousemove', (event) => {
         const tooltip = tooltipRef.current;
         if (tooltip) {
+          const container = svgRef.current.parentElement;
           const rect = container.getBoundingClientRect();
           tooltip.style.left = (event.clientX - rect.left + 12) + 'px';
           tooltip.style.top = (event.clientY - rect.top - 10) + 'px';
         }
       })
       .on('mouseleave', () => {
-        setHoveredCountry(null);
         if (tooltipRef.current) tooltipRef.current.style.display = 'none';
       });
 
@@ -221,9 +305,7 @@ export default function WorldMap({
           .slice(0, 8)
           .map(([n]) => n);
 
-    // Use dynamic reporter coordinates
     const hubProj = projection([hubCoords[1], hubCoords[0]]);
-
     const arcsGroup = zoomG.append('g').attr('class', 'arcs');
 
     for (const name of arcCountries) {
@@ -299,7 +381,7 @@ export default function WorldMap({
     legend.append('rect').attr('x', 0).attr('y', 18).attr('width', 12).attr('height', 12).attr('fill', COLORS.imports).attr('rx', 2);
     legend.append('text').attr('x', 18).attr('y', 28).text('Importaciones CIF').attr('fill', COLORS.text).attr('font-size', '11px');
 
-  }, [worldData, effectiveTotals, selectedCountry, isoToName, onSelectCountry, hubCoords, selectedProduct, blocHighlight]);
+  }, [worldData, effectiveTotals, selectedCountry, numIdToName, onSelectCountry, hubCoords, selectedProduct, blocHighlight, countryTotals, containerWidth]);
 
   return (
     <div className="world-map-container">
@@ -308,52 +390,3 @@ export default function WorldMap({
     </div>
   );
 }
-
-function findCountryName(numericId, isoToName) {
-  const numId = parseInt(numericId, 10);
-  for (const [iso2, name] of Object.entries(isoToName)) {
-    if (parseInt(ISO_NUM_MAP[iso2], 10) === numId) return name;
-  }
-  return null;
-}
-
-// ISO 3166-1 numeric -> ISO2 mapping (common countries)
-const ISO_NUM_MAP = {
-  'AF': '4', 'AL': '8', 'DZ': '12', 'AS': '16', 'AD': '20', 'AO': '24',
-  'AG': '28', 'AR': '32', 'AM': '51', 'AU': '36', 'AT': '40', 'AZ': '31',
-  'BS': '44', 'BH': '48', 'BD': '50', 'BB': '52', 'BY': '112', 'BE': '56',
-  'BZ': '84', 'BJ': '204', 'BT': '64', 'BO': '68', 'BA': '70', 'BW': '72',
-  'BR': '76', 'BN': '96', 'BG': '100', 'BF': '854', 'BI': '108',
-  'KH': '116', 'CM': '120', 'CA': '124', 'CV': '132', 'CF': '140',
-  'TD': '148', 'CL': '152', 'CN': '156', 'CO': '170', 'KM': '174',
-  'CG': '178', 'CD': '180', 'CR': '188', 'CI': '384', 'HR': '191',
-  'CU': '192', 'CY': '196', 'CZ': '203', 'DK': '208', 'DJ': '262',
-  'DM': '212', 'DO': '214', 'EC': '218', 'EG': '818', 'SV': '222',
-  'GQ': '226', 'ER': '232', 'EE': '233', 'ET': '231', 'FJ': '242',
-  'FI': '246', 'FR': '250', 'GA': '266', 'GM': '270', 'GE': '268',
-  'DE': '276', 'GH': '288', 'GR': '300', 'GD': '308', 'GT': '320',
-  'GN': '324', 'GW': '624', 'GY': '328', 'HT': '332', 'HN': '340',
-  'HU': '348', 'IS': '352', 'IN': '356', 'ID': '360', 'IR': '364',
-  'IQ': '368', 'IE': '372', 'IL': '376', 'IT': '380', 'JM': '388',
-  'JP': '392', 'JO': '400', 'KZ': '398', 'KE': '404', 'KI': '296',
-  'KP': '408', 'KR': '410', 'KW': '414', 'KG': '417', 'LA': '418',
-  'LV': '428', 'LB': '422', 'LS': '426', 'LR': '430', 'LY': '434',
-  'LI': '438', 'LT': '440', 'LU': '442', 'MK': '807', 'MG': '450',
-  'MW': '454', 'MY': '458', 'MV': '462', 'ML': '466', 'MT': '470',
-  'MR': '478', 'MU': '480', 'MX': '484', 'MD': '498', 'MC': '492',
-  'MN': '496', 'ME': '499', 'MA': '504', 'MZ': '508', 'MM': '104',
-  'NA': '516', 'NP': '524', 'NL': '528', 'NZ': '554', 'NI': '558',
-  'NE': '562', 'NG': '566', 'NO': '578', 'OM': '512', 'PK': '586',
-  'PA': '591', 'PG': '598', 'PY': '600', 'PE': '604', 'PH': '608',
-  'PL': '616', 'PT': '620', 'QA': '634', 'RO': '642', 'RU': '643',
-  'RW': '646', 'SA': '682', 'SN': '686', 'RS': '688', 'SL': '694',
-  'SG': '702', 'SK': '703', 'SI': '705', 'SB': '90', 'SO': '706',
-  'ZA': '710', 'SS': '728', 'ES': '724', 'LK': '144', 'SD': '729',
-  'SR': '740', 'SZ': '748', 'SE': '752', 'CH': '756', 'SY': '760',
-  'TW': '158', 'TJ': '762', 'TZ': '834', 'TH': '764', 'TL': '626',
-  'TG': '768', 'TT': '780', 'TN': '788', 'TR': '792', 'TM': '795',
-  'UG': '800', 'UA': '804', 'AE': '784', 'GB': '826', 'US': '840',
-  'UY': '858', 'UZ': '860', 'VU': '548', 'VE': '862', 'VN': '704',
-  'YE': '887', 'ZM': '894', 'ZW': '716',
-  'XK': '-99', 'PS': '275', 'EH': '732',
-};

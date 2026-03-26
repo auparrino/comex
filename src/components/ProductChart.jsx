@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { fmt, fmtPct } from '../utils/format';
 import { COLORS, RUBRO_COLORS } from '../utils/colors';
 import './ProductChart.css';
@@ -11,6 +11,12 @@ export default function ProductChart({ data, flowFilter, total, digitLevel = 2, 
 
   const [expPage, setExpPage] = useState(1);
   const [impPage, setImpPage] = useState(1);
+
+  // Reset pagination when data changes (e.g. switching country)
+  useEffect(() => {
+    setExpPage(1);
+    setImpPage(1);
+  }, [data]);
 
   if (!data) return null;
 

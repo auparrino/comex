@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo, useState, useEffect, useCallback } from 'react';
 import { fmt } from '../utils/format';
 import './TopPartners.css';
 
@@ -113,11 +113,11 @@ export default function TopPartners({
   }, [countries, summary, selectedYears, productMapData, selectedProduct]);
 
   // Sort function based on concept
-  const sortVal = (item) => {
+  const sortVal = useCallback((item) => {
     if (concept === 'exp') return item.totalExports;
     if (concept === 'imp') return item.totalImports;
     return item.totalTrade;
-  };
+  }, [concept]);
 
   // Build display list with grouping
   const displayList = useMemo(() => {
@@ -165,7 +165,7 @@ export default function TopPartners({
     const combined = [...blocRows, ...individuals];
     combined.sort((a, b) => sortVal(b) - sortVal(a));
     return combined;
-  }, [ranked, activeBlocs, concept]);
+  }, [ranked, activeBlocs, sortVal]);
 
   // Filtered by search
   const filtered = useMemo(() => {
@@ -184,7 +184,7 @@ export default function TopPartners({
   const maxVal = useMemo(() => {
     if (!filtered.length) return 1;
     return Math.max(1, ...filtered.map(c => sortVal(c)));
-  }, [filtered, concept]);
+  }, [filtered, sortVal]);
 
   const renderBar = (item) => {
     if (concept === 'exp') {

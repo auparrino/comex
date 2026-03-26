@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -23,9 +23,11 @@ export function useTradeData() {
   const [error, setError] = useState(null);
 
   // Cache for loaded country detail files (cleared on reporter change)
-  const [detailCache, setDetailCache] = useState({});
+  const detailCacheRef = useRef({});
   // Cache for product map files
-  const [productMapCache, setProductMapCache] = useState({});
+  const productMapCacheRef = useRef({});
+  // Cache for bilateral analysis files
+  const bilateralCacheRef = useRef({});
 
   // Load shared data once on mount
   useEffect(() => {
@@ -48,8 +50,8 @@ export function useTradeData() {
   useEffect(() => {
     if (!reporters) return; // Wait for shared data
     setLoading(true);
-    setDetailCache({});
-    setProductMapCache({});
+    detailCacheRef.current = {};
+    productMapCacheRef.current = {};
 
     const base = `${BASE}data/reporters/${activeReporter}`;
     Promise.all([
@@ -79,7 +81,7 @@ export function useTradeData() {
 
   // Load detail file for a specific country
   const loadCountryDetail = useCallback(async (countryName) => {
-    if (detailCache[countryName]) return detailCache[countryName];
+    if (detailCacheRef.current[countryName]) return detailCacheRef.current[countryName];
     if (!countrySlugs || !countrySlugs[countryName]) return null;
 
     const slug = countrySlugs[countryName];
@@ -87,28 +89,45 @@ export function useTradeData() {
       const resp = await fetch(`${BASE}data/reporters/${activeReporter}/details/${slug}.json`);
       if (!resp.ok) return null;
       const data = await resp.json();
-      setDetailCache(prev => ({ ...prev, [countryName]: data }));
+      detailCacheRef.current[countryName] = data;
       return data;
     } catch {
       return null;
     }
-  }, [countrySlugs, detailCache, activeReporter]);
+  }, [countrySlugs, activeReporter]);
 
   // Load product map for choropleth (by chapter)
   const loadProductMap = useCallback(async (chapter) => {
     const cacheKey = `${activeReporter}_${chapter}`;
-    if (productMapCache[cacheKey]) return productMapCache[cacheKey];
+    if (productMapCacheRef.current[cacheKey]) return productMapCacheRef.current[cacheKey];
 
     try {
       const resp = await fetch(`${BASE}data/reporters/${activeReporter}/product_map/ch${chapter}.json`);
       if (!resp.ok) return null;
       const data = await resp.json();
-      setProductMapCache(prev => ({ ...prev, [cacheKey]: data }));
+      productMapCacheRef.current[cacheKey] = data;
       return data;
     } catch {
       return null;
     }
-  }, [activeReporter, productMapCache]);
+  }, [activeReporter]);
+
+  // Load bilateral analysis file for a specific country
+  const loadBilateralData = useCallback(async (countryName) => {
+    if (bilateralCacheRef.current[countryName]) return bilateralCacheRef.current[countryName];
+    if (!countrySlugs || !countrySlugs[countryName]) return null;
+
+    const slug = countrySlugs[countryName];
+    try {
+      const resp = await fetch(`${BASE}data/bilateral/${slug}.json`);
+      if (!resp.ok) return null;
+      const data = await resp.json();
+      bilateralCacheRef.current[countryName] = data;
+      return data;
+    } catch {
+      return null;
+    }
+  }, [countrySlugs]);
 
   const years = useMemo(() => {
     if (!summary) return [];
@@ -143,8 +162,9 @@ export function useTradeData() {
     ncmDescriptions, countrySlugs, rubros,
     comtradeValidation,
     years, countries, loading, error,
-    loadCountryDetail, detailCache,
+    loadCountryDetail,
     loadProductMap,
+    loadBilateralData,
     activeReporter, setActiveReporter, reporters,
   };
 }

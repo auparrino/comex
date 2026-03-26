@@ -4,6 +4,7 @@ import { fmt } from '../utils/format';
 import { getDetailProducts, aggregateByRubro } from '../hooks/useTradeData';
 import TradeTimeline from './TradeTimeline';
 import ProductChart from './ProductChart';
+import AiBlocAnalysis from './AiBlocAnalysis';
 import './CountryPanel.css';
 
 export default function BlocPanel({ blocKey, data, selectedYears, onClose, onSelectCountry }) {
@@ -14,22 +15,23 @@ export default function BlocPanel({ blocKey, data, selectedYears, onClose, onSel
   const [productView, setProductView] = useState('chapters');
   const [activeTab, setActiveTab] = useState('paises');
 
-  if (!bloc) return null;
-
   const yearRange = selectedYears.length > 1
     ? `${selectedYears[0]}-${selectedYears[selectedYears.length - 1]}`
     : selectedYears[0];
 
+  const blocMembers = bloc?.members || [];
+
   const yearlyData = useMemo(() => {
+    if (!bloc) return [];
     return data.years.map(yr => {
       let exp = 0, imp = 0;
-      for (const member of bloc.members) {
+      for (const member of blocMembers) {
         const yd = data.summary[member]?.years?.[yr];
         if (yd) { exp += yd.exp; imp += yd.imp; }
       }
       return { year: yr, exp, imp };
     });
-  }, [data.years, data.summary, bloc.members]);
+  }, [data.years, data.summary, blocMembers]);
 
   const totals = useMemo(() => {
     let exp = 0, imp = 0;
@@ -41,7 +43,7 @@ export default function BlocPanel({ blocKey, data, selectedYears, onClose, onSel
   }, [yearlyData, selectedYears]);
 
   const members = useMemo(() => {
-    return bloc.members
+    return blocMembers
       .map(name => {
         let exp = 0, imp = 0;
         for (const yr of selectedYears) {
@@ -52,7 +54,7 @@ export default function BlocPanel({ blocKey, data, selectedYears, onClose, onSel
       })
       .filter(m => m.total > 0)
       .sort((a, b) => b.total - a.total);
-  }, [data.summary, bloc.members, selectedYears]);
+  }, [data.summary, blocMembers, selectedYears]);
 
   const maxMemberTrade = members[0]?.total || 1;
 
@@ -84,7 +86,7 @@ export default function BlocPanel({ blocKey, data, selectedYears, onClose, onSel
         setDetailLoading(false);
       })
       .catch(() => setDetailLoading(false));
-  }, [blocKey, members.length]);
+  }, [blocKey, data.loadCountryDetail]);
 
   const productData = useMemo(() => {
     if (!detailData) return { exp: [], imp: [] };
@@ -102,6 +104,8 @@ export default function BlocPanel({ blocKey, data, selectedYears, onClose, onSel
     };
   }, [detailData, data.ncmDescriptions, data.rubros, selectedYears, productView]);
 
+  if (!bloc) return null;
+
   return (
     <div className="country-panel">
       <div className="panel-header">
@@ -109,7 +113,7 @@ export default function BlocPanel({ blocKey, data, selectedYears, onClose, onSel
           <h2>{bloc.label}</h2>
           <p className="panel-subtitle">{members.length} socios · {yearRange}</p>
         </div>
-        <button className="close-btn" onClick={onClose}>&times;</button>
+        <button className="close-btn" onClick={onClose} aria-label="Cerrar panel">&times;</button>
       </div>
 
       <div className="panel-kpis">
@@ -137,6 +141,7 @@ export default function BlocPanel({ blocKey, data, selectedYears, onClose, onSel
       <div className="panel-tabs">
         <button className={activeTab === 'paises' ? 'active' : ''} onClick={() => setActiveTab('paises')}>Países</button>
         <button className={activeTab === 'productos' ? 'active' : ''} onClick={() => setActiveTab('productos')}>Productos</button>
+        <button className={activeTab === 'ai' ? 'active' : ''} onClick={() => setActiveTab('ai')}>Analisis IA</button>
       </div>
 
       {activeTab === 'productos' && (
@@ -156,7 +161,15 @@ export default function BlocPanel({ blocKey, data, selectedYears, onClose, onSel
       )}
 
       <div className="panel-content">
-        {activeTab === 'paises' ? (
+        {activeTab === 'ai' ? (
+          <AiBlocAnalysis
+            bloc={bloc}
+            members={members}
+            totals={totals}
+            data={data}
+            selectedYears={selectedYears}
+          />
+        ) : activeTab === 'paises' ? (
           <div className="bloc-members-list">
             {members.map(m => (
               <button
